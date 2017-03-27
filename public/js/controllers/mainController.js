@@ -1,10 +1,13 @@
 app.controller('mainController', function($scope) {
   $scope.formContainer = false;
 
-  $scope.addItem = function (){
+  $scope.openForm = function (){
     $scope.formContainer = true;
   };
 
+  $scope.addItem = function(){
+    alert("im new item");
+  };
   // //'import' functions from service
   // 	$scope.beers = service.beers;
   //   $scope.getBeers = service.getBeers;

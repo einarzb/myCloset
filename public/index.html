@@ -65,10 +65,10 @@
         <!-- Jumbotron Header -->
         <header class="jumbotron">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <h1>Clusette</h1>
                     <p>Didn't you always want to know what's inside your closet?</p>
-                    <button type="button" name="button" class="btn btn-info" ng-click="addItem()" ng-hide="formContainer">Add item</button>
+                    <button type="button" name="button" class="btn btn-info" ng-click="openForm()" ng-hide="formContainer">Add Item</button>
                     <div style="max-width:480px" id="_giphy_j666zW6xrD24E"></div>
                     <script>
                         var _giphy = _giphy || [];
@@ -86,9 +86,21 @@
                         s.parentNode.insertBefore(g, s);
                     </script>
                 </div>
-                <div class="col-md-6 pull-right" ng-hide="!formContainer">
+                <div class="col-md-4 pull-right" ng-hide="!formContainer">
                     <form class="form" action="http://localhost:8000/success" method="post">
-                        <color-picker ng-model="myColor"></color-picker>
+                        <label for="color">Pick the Color:
+                        <color-picker class="color" ng-model="myColor"></color-picker>
+                      </label> <br><br>
+                        <label for="size">Pick the size:
+                          <div class="sizeButtons">
+                          <button class="btn info-btn btn-sm" type="button" name="xs" value="xs">XS</button>
+                          <button class="btn info-btn btn-sm" type="button" name="s" value="s">S</button>
+                          <button class="btn info-btn btn-sm" type="button" name="md" value="md">MD</button>
+                          <button class="btn info-btn btn-sm" type="button" name="lg" value="lg">L</button>
+                          <button class="btn info-btn btn-sm" type="button" name="xl" value="xl">XL</button>
+                        </div>
+                      </label> <br>
+                        <button type="button" name="button" class="btn btn-info" ng-click="addItem()" ng-hide="!formContainer">Submit</button>
                     </form>
                 </div>
             </div>
