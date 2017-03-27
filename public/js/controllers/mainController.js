@@ -5,7 +5,10 @@ app.controller('mainController', function($scope) {
     $scope.formContainer = true;
   };
 
+  
   $scope.addItem = function(item){
+    console.log(item);
+
     alert("im new item");
   };
   // //'import' functions from service

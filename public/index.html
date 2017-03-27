@@ -68,8 +68,8 @@
         <header class="jumbotron">
             <div class="row">
                 <div class="col-md-8">
-                    <h1>Clusette</h1>
-                    <p>I've got nothing to wear!</p>
+                    <h1>Clueset<i class="fa fa-hanger"></i> </h1>
+                    <p>NO MORE I've got nothing to wear!</p>
                     <button type="button" name="button" class="btn btn-info" ng-click="openForm()" ng-hide="formContainer">Add Item</button>
                     <div style="max-width:480px" id="_giphy_j666zW6xrD24E"></div>
                     <script>
@@ -116,18 +116,18 @@
                       </label> <br>
                         <label for="price">price <input type="number" name="price" placeholder="price" ng-model="item.price"></label><br>
                         <label for="brand">brand <input type="text" name="brand" placeholder="brand" ng-model="item.brand"></label><br>
-                        <label for="condition">condition <input type="text" name="condition" placeholder="condition" ng-model="item.condition"></label><br>
+                        <label for="condition">condition
+                           <select class="form-control" ng-model="item.condition">
+                             <option>New with aticket!</option>
+                             <option>Never been worn</option>
+                             <option>Old but loveable</option>
+                             <option>Vintage</option>
+                             <option>Should go to donation</option>
+                           </select>
+                        </label><br>
                         <label for="purchaseDate">date (fill in year/month is ok)<input type="date" name="purchaseDate" ng-model="item.purchaseDate"></label><br>
-                        <!--seasons-->
-                        <!-- <div class="btn-group" data-toggle="buttons" style="display:inline">
-                            <label for="season">pick season </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="options" id="winter" autocomplete="off"> <i class="fa fa-umbrella" aria-hidden="true">winter</i>
-                            </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="options" id="summer" autocomplete="off"> <i class="fa fa-sun-o" aria-hidden="true">summer</i>
-                            </label>
-                        </div> -->
+                        <label for="image">upload image:<input type="text" name="image" ng-model="item.image"></label><br>
+
                         <button type="submit" name="button" class="btn btn-info" ng-hide="!formContainer">Submit</button>
                     </form>
                 </div>

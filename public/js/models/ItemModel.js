@@ -2,20 +2,17 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var reviewSchema = new Schema ({
-	name: String,
-	comment: String
-}, {versionKey: false});
+var itemSchema = new Schema ({
+	type: String,
+	color: String,
+  size: String,
+  price: Number,
+  brand: String,
+  condition: String,
+  date: String,
+  image: String
+});
 
-var beerSchema = new Schema ({
-	name: String,
-	abv: Number,
-    style: String,
-    image: String,
-    rating: [Number],
-    reviews: [reviewSchema]
-}, {versionKey: false});
+var Item = mongoose.model('Item', itemSchema);
 
-var Beer = mongoose.model('Beer', beerSchema);
-
-module.exports = Beer;
+module.exports = Item;
