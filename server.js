@@ -4,6 +4,11 @@ var app = express();
 //declare port (heroku publication)
 var port = /*process.env.PORT ||*/ 3000;
 
+//body parser middleware
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 //setup directories for server access
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
