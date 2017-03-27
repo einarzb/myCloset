@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <h1>Clusette</h1>
-                    <p>Didn't you always want to know what's inside your closet?</p>
+                    <p>I've got nothing to wear!</p>
                     <button type="button" name="button" class="btn btn-info" ng-click="openForm()" ng-hide="formContainer">Add Item</button>
                     <div style="max-width:480px" id="_giphy_j666zW6xrD24E"></div>
                     <script>
@@ -90,8 +90,8 @@
                 </div>
                 <div class="col-md-4 pull-right" ng-hide="!formContainer">
                     <form class="form" action="http://localhost:8000/success" method="post" ng-submit="addItem(item)">
-                        <label for="select">
-                       <select ng-model="item.type" class="form-control">
+                        <label> select type:
+                       <select class="form-control" ng-model="item.type">
                             <option>T-Shirt</option>
                             <option>Pants</option>
                             <option>Dress</option>
@@ -128,10 +128,7 @@
                                 <input type="radio" name="options" id="summer" autocomplete="off"> <i class="fa fa-sun-o" aria-hidden="true">summer</i>
                             </label>
                         </div> -->
-
-                        <br><br>
-
-                        <button type="button" name="button" class="btn btn-info" ng-hide="!formContainer">Submit</button>
+                        <button type="submit" name="button" class="btn btn-info" ng-hide="!formContainer">Submit</button>
                     </form>
                 </div>
             </div>
