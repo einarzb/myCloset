@@ -7,7 +7,7 @@ var port = /*process.env.PORT ||*/ 3000;
 //require mongoose dependancy
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/closetdb");
-//var Travel = require("./public/js/models/TravelModel.js");
+var Item = require("./public/js/models/ItemModel.js");
 
 //body parser middleware
 var bodyParser = require('body-parser');

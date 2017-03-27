@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="closetApp">
 
 <head>
     <meta charset="utf-8">
@@ -10,6 +10,8 @@
     <title>Cluesette</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="angularjs-color-picker/dist/angularjs-color-picker.min.css" />
+    <link rel="stylesheet" href="angularjs-color-picker/dist/themes/angularjs-color-picker-bootstrap.min.css" />
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
@@ -23,7 +25,7 @@
 
 </head>
 
-<body>
+<body ng-container="mainController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -64,6 +66,12 @@
         <header class="jumbotron">
             <h1>Clusette</h1>
             <p>Didn't you always want to know what's inside your closet?</p>
+            <button type="button" name="button" class="btn btn-info" ng-show="formContainer">Add item</button>
+            <div class="formContainer">
+                <form class="form" action="http://localhost:8000/success" method="post">
+                    <color-picker ng-model="myColor"></color-picker>
+                </form>
+            </div>
         </header>
 
         <hr>
@@ -149,6 +157,12 @@
     <script type="text/javascript" src="angular/angular.js"></script>
     <script src="angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--color picker-->
+    <script src="tinycolor2/dist/tinycolor-min.js"></script>
+    <script src="angularjs-color-picker/dist/angularjs-color-picker.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/mainController.js"></script>
+    <!--controller-->
 
 </body>
 
