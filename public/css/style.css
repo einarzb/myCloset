@@ -1,0 +1,15 @@
+body {
+    padding-top: 70px;
+}
+
+.jumbotron {
+    margin-top: 50px;
+}
+
+.item {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
