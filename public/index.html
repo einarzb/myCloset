@@ -25,7 +25,7 @@
 
 </head>
 
-<body ng-container="mainController">
+<body ng-controller="mainController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -64,13 +64,33 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron">
-            <h1>Clusette</h1>
-            <p>Didn't you always want to know what's inside your closet?</p>
-            <button type="button" name="button" class="btn btn-info" ng-show="formContainer">Add item</button>
-            <div class="formContainer">
-                <form class="form" action="http://localhost:8000/success" method="post">
-                    <color-picker ng-model="myColor"></color-picker>
-                </form>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Clusette</h1>
+                    <p>Didn't you always want to know what's inside your closet?</p>
+                    <button type="button" name="button" class="btn btn-info" ng-click="addItem()" ng-hide="formContainer">Add item</button>
+                    <div style="max-width:480px" id="_giphy_j666zW6xrD24E"></div>
+                    <script>
+                        var _giphy = _giphy || [];
+                        _giphy.push({
+                            id: "j666zW6xrD24E",
+                            w: 480,
+                            h: 280,
+                            clickthrough_url: "https://giphy.com/gifs/j666zW6xrD24E"
+                        });
+                        var g = document.createElement("script");
+                        g.type = "text/javascript";
+                        g.async = true;
+                        g.src = ("https:" == document.location.protocol ? "https://" : "http://") + "giphy.com/static/js/widgets/embed.js";
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(g, s);
+                    </script>
+                </div>
+                <div class="col-md-6 pull-right" ng-hide="!formContainer">
+                    <form class="form" action="http://localhost:8000/success" method="post">
+                        <color-picker ng-model="myColor"></color-picker>
+                    </form>
+                </div>
             </div>
         </header>
 
