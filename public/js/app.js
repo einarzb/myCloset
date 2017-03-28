@@ -1,5 +1,12 @@
 var app = angular.module('closetApp', ['ui.router','color.picker']);
 
+app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider.state('about', {
+    url: '/about',
+    templateUrl: '../templates/partial-about.html'
+  });
+});
+
 // app.config(['$stateProvider','$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 //   //hashbang fix
 //   $locationProvider.html5Mode(true);

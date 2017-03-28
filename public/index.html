@@ -50,7 +50,7 @@
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a ui-sref="about">About</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav" style="float: right">
@@ -71,30 +71,17 @@
                 <div class="col-md-8">
                     <h1>Clueset</h1>
                     <p>NO MORE I've got nothing to wear!</p>
-                    <button type="button" name="button" class="btn btn-info" ng-click="openForm()" ng-hide="formContainer">Start</button>
-                    <div style="max-width:480px" id="_giphy_j666zW6xrD24E"></div>
-                    <script>
-                        var _giphy = _giphy || [];
-                        _giphy.push({
-                            id: "j666zW6xrD24E",
-                            w: 480,
-                            h: 280,
-                            clickthrough_url: "https://giphy.com/gifs/j666zW6xrD24E"
-                        });
-                        var g = document.createElement("script");
-                        g.type = "text/javascript";
-                        g.async = true;
-                        g.src = ("https:" == document.location.protocol ? "https://" : "http://") + "giphy.com/static/js/widgets/embed.js";
-                        var s = document.getElementsByTagName("script")[0];
-                        s.parentNode.insertBefore(g, s);
-                    </script>
+                    <button type="button" name="button" class="btn btn-info" ng-click="openForm()" ng-hide="formContainer">Start</button> <br> <br>
+                    <img src="https://media.giphy.com/media/j666zW6xrD24E/giphy.gif" />
                 </div>
                 <div class="col-md-4 pull-right" ng-hide="!formContainer">
                     <img class="hanger" src="images/hanger.png" />
                     <h4><em>INDEX YOUR CLOSET</em></h4>
-                    <form class="form" action="http://localhost:8000/success" method="post" ng-submit="addItem(newItem)">
+                    <!-- action="http://localhost:3000/" -->
+                    <form class="form" method="post" ng-submit="addItem(newItem)">
                         <label> select type:
-                       <select class="form-control" ng-model="newItem.type">
+                        </label>
+                        <select class="form-control" ng-model="newItem.type">
                             <option value="T-Shirt">T-Shirt</option>
                             <option value="Pants">Pants</option>
                             <option value="Dress">Dress</option>
@@ -104,7 +91,6 @@
                             <option value="Tights">Tights</option>
                             <option value="Other">Other</option>
                       </select>
-                      </label>
                         <label for="color">Pick the Color:
                         <color-picker class="color" ng-model="newItem.color"></color-picker>
                       </label> <br>
@@ -112,11 +98,11 @@
 
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group" role="group" ng-selected="newItem.size" ng-model="selected">
-                                <button class="btn btn-default btn-sm" ng-click="newItem.size = xs" type="button" >XS</button>
-                                <button class="btn btn-default btn-sm" ng-model="newItem.size = s" type="button">S</button>
-                                <button class="btn btn-default btn-sm" ng-model="newItem.size = md" type="button" >MD</button>
-                                <button class="btn btn-default btn-sm" ng-model="newItem.size = lg" type="button" >L</button>
-                                <button class="btn btn-default btn-sm" ng-model="newItem.size = xl" type="button" >XL</button>
+                                <button class="btn btn-default btn-sm" ng-click="newItem.size = 'xs'" type="button" >XS</button>
+                                <button class="btn btn-default btn-sm" ng-click="newItem.size = 's'" type="button">S</button>
+                                <button class="btn btn-default btn-sm" ng-click="newItem.size = 'md'" type="button" >MD</button>
+                                <button class="btn btn-default btn-sm" ng-click="newItem.size = 'lg'" type="button" >L</button>
+                                <button class="btn btn-default btn-sm" ng-click="newItem.size = 'xl'" type="button" >XL</button>
                             </div>
                        </div>
 
@@ -142,7 +128,9 @@
         </header>
 
         <hr>
-
+        <div class="row">
+            <ui-view="about"></ui-view>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <h3>Recent items uploaded</h3>

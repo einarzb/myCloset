@@ -18,6 +18,17 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
 
+//adding items
+app.post('/closetdb', function(req, res, next) {
+  Item.create(req.body, function(err, item) {
+    if (err) {
+      console.error(err)
+      return next(err);
+    } else {
+      res.send(item);
+    }
+  });
+});
 
 //start listening
 app.listen(port, function () {

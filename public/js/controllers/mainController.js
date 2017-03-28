@@ -1,15 +1,25 @@
 app.controller('mainController', function($scope, factory) {
-  $scope.formContainer = false;
+  //toggle form view
+  $scope.formContainer = false; //hidden
+  //an empty array to store 'items'
+  $scope.closet=[];
 
+//reveals form on-click
   $scope.openForm = function (){
-    $scope.formContainer = true;
-  };
+    $scope.formContainer = true;//reveal form
+  }
 
-
-  $scope.addItem = function(item){
-    console.log(item);
-
-    alert("im new item");
+//adds submitted item onto closet array
+  $scope.addItem = function(newItem){
+    console.log(newItem);
+    factory.addItem(newItem).then(function(response){
+      console.log(response);
+      $scope.closet.push(response);
+      console.log($scope.closet);
+    })
+    .catch(function(error){
+      console.log(error);
+    })
   };
   // //'import' functions from service
   // 	$scope.beers = service.beers;
