@@ -60,6 +60,22 @@ app.controller('mainController', function($scope, factory) {
       })
     };
 
+    $scope.editItem = function(index){
+      //console.log(index);
+      var editedItem = $scope.closet[index]._id;
+      console.log(editedItem);
+
+      factory.editItem(editedItem)
+      .then(function(response){
+        //toggle for editing items
+        $scope.edit = false;
+        //console.log($scope.closet);
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+    };
+
   // //'import' functions from service
   // 	$scope.beers = service.beers;
   //   $scope.getBeers = service.getBeers;

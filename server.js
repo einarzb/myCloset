@@ -58,7 +58,7 @@ app.delete('/closetdb/:id', function (req, res, next) {
 //update
 app.put('/closetdb/:id', function(req, res, next){
   //item before change
-  Item.find({_id: req.params.id}).exec(function(err, beer){
+  Item.find({_id: req.params.id}).exec(function(err, item){
   });
   //item after edit
   Item.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, item){ //pass 3 things: id, req.body, boolean and func
