@@ -87,6 +87,8 @@
                             <option value="Dress">Dress</option>
                             <option value="Skirt">Skirt</option>
                             <option value="Jacket">Jacket</option>
+                            <option value="Coat">Coat</option>
+                            <option value="Rain Coat">Rain Coat</option>
                             <option value="Sport Jacket">Sport Jacket</option>
                             <option value="Tights">Tights</option>
                             <option value="Other">Other</option>
@@ -109,6 +111,21 @@
                       </label> <br>
                         <label for="price">price <input type="number" name="price" placeholder="price" ng-model="newItem.price"></label><br>
                         <label for="brand">brand <input type="text" name="brand" placeholder="brand" ng-model="newItem.brand"></label><br>
+
+                        <label for="fabric">fabric
+                          <select class="form-control" ng-selected="newItem.fabric" ng-model="selected">
+                            <option>Cotton</option>
+                            <option>Chiffon</option>
+                            <option>Jeans</option>
+                            <option>Suede</option>
+                            <option>Knit</option>
+                            <option>Silk</option>
+                            <option>Denim</option>
+                            <option>Satin</option>
+                            <option>Flanel</option>
+                            <option>Other </option>
+                          </select>
+                        </label>
                         <label for="condition">condition
                            <select class="form-control" ng-selected="newItem.condition" ng-model="selected">
                              <option>New with tags!</option>
@@ -116,11 +133,12 @@
                              <option>Old but loveable</option>
                              <option>Vintage</option>
                              <option>Should go to donation</option>
+                             <option>Other</option>
                            </select>
                         </label><br>
-                        <label for="purchaseDate">date (fill in year/month is ok)<input type="date" name="purchaseDate" ng-model="newItem.purchaseDate"></label><br>
+                        <label for="season">season
+                        </label><br>
                         <label for="image">upload image:<input type="text" name="image" ng-model="newItem.image"></label><br>
-
                         <button type="submit" name="button" class="btn btn-info" ng-hide="!formContainer">Submit</button>
                     </form>
                 </div>
@@ -134,8 +152,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <h3>Recent items uploaded</h3>
+                <button type="button" name="sortTypeBtn" class="btn btn-info" ng-click="sortType()">Sort by Type</button>
+                <button type="button" name="sortTypeBtn" class="btn btn-success" ng-click="sortColor()">Sort by Color</button>
             </div>
-        </div>
+        </div> <br> <br>
 
         <!-- Closet Items -->
         <div class="row text-center">
@@ -144,7 +164,11 @@
                     <img ng-src="{{item.image}}" alt="">
                     <div class="caption">
                         <h3>{{item.type}}</h3>
-                        <p>color:{{item.color}} size: {{item.size}} fabric {{item.fabric}}<br> brand:{{item.brand}}, condition:{{item.condition}}
+                        <p><strong>color:</strong> {{item.color}} <strong>size:</strong> {{item.size}} <br>
+                            <strong>fabric:</strong> {{item.fabric}}<br>
+                            <strong>brand:</strong> {{item.brand}}<br>
+                            <strong>condition:<strong> {{item.condition}} <br>
+                            <strong>season: </strong> {{item.season}}
                         </p>
                         <p>
                             <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">Mix & Match</a>
@@ -153,48 +177,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div class="col-md-3 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">Mix & Match</a>
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-
-        <!-- <div class="col-md-3 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">Mix & Match</a>
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-
-        <!-- <div class="col-md-3 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">Mix & Match</a>
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-
-        <!-- /.row -->
-
         <hr>
 
         <!-- Footer -->

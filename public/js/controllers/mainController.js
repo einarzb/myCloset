@@ -7,10 +7,26 @@ app.controller('mainController', function($scope, factory) {
 //reveals form on-click
   $scope.openForm = function (){
     $scope.formContainer = true;//reveal form
-  }
+  };
+//sorting buttons should change the sort by index
+$scope.sortType = function (){
+  alert("im not working yet");
+};
+$scope.sortColor = function (){
+  alert("im not working too");
+};
 
 //getting items from db
 $scope.getItems = factory.getItems;
+
+$scope.getItems()
+.then(function(result){
+  console.log(result);
+  $scope.closet = result; //the items are populating the array
+})
+.catch(function(error){
+  console.log(error);
+})
 
 //adds submitted item onto closet array and send it to DB
 $scope.addItem = function(newItem){
