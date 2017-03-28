@@ -54,7 +54,12 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav" style="float: right">
-                    <li><a href="#signin" class="navbar-nav pull-right"><i class="fa fa-user" style="color:pink;font-size:15px;"></i>   Sign In</a></li>
+                    <li>
+                        <a href="#signin" class="navbar-nav pull-right"><i class="fa fa-user" style="color:pink;font-size:15px;"></i>   Sign In</a>
+                    </li>
+                    <li>
+                        <a href="#cart" class="navbar-nav"> <i class="fa fa-shopping-bag" style="color:#fff" aria-hidden="true"></i></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -82,7 +87,8 @@
                         <label> select type:
                         </label>
                         <select class="form-control" ng-model="newItem.type">
-                            <option value="T-Shirt">T-Shirt</option>
+                            <option value="T-Shirt">Top</option>
+                            <option value="Sweater">Sweater</option>
                             <option value="Pants">Pants</option>
                             <option value="Dress">Dress</option>
                             <option value="Skirt">Skirt</option>
@@ -91,6 +97,7 @@
                             <option value="Rain Coat">Rain Coat</option>
                             <option value="Sport Jacket">Sport Jacket</option>
                             <option value="Tights">Tights</option>
+                            <option value="Tights">Shorts</option>
                             <option value="Other">Other</option>
                       </select>
                         <label for="color">Pick the Color:
@@ -108,7 +115,7 @@
                        </div>
 
                       </label> <br>
-                        <label for="price">price <input type="number" name="price" placeholder="price" ng-model="newItem.price"></label>
+                        <label for="price">price <input type="number" min="0" name="price" placeholder="price" ng-model="newItem.price"></label>
                         <label for="brand">brand <input type="text" name="brand" placeholder="brand" ng-model="newItem.brand"></label><br>
                         <label for="fabric">fabric
                           <select class="form-control" ng-selected="selected" ng-model="newItem.fabric">
@@ -122,6 +129,7 @@
                             <option>Satin</option>
                             <option>Flanel</option>
                             <option>Velvet</option>
+                            <option>Kashmir</option>
                             <option>Other </option>
                           </select>
                         </label>
@@ -171,8 +179,9 @@
                     <img ng-src="{{item.image}}" alt="">
                     <div class="caption">
                         <h3>{{item.type}}</h3>
+                        <h5>{{item.price | currency}}</h5>
                         <p><strong>color:</strong> {{item.color}} <strong>size:</strong> {{item.size}} <br>
-                            <strong>fabric:</strong> {{item.fabric}}<strong>brand:</strong> {{item.brand}}<br>
+                            <strong>fabric:</strong> {{item.fabric}} <strong> brand:</strong> {{item.brand}}<br>
                             <strong>condition:<strong> {{item.condition}} <br>
                             <strong>season: </strong> {{item.season}}
                         </p>
