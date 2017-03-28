@@ -1,11 +1,11 @@
-app.controller('mainController', function($scope) {
+app.controller('mainController', function($scope, factory) {
   $scope.formContainer = false;
 
   $scope.openForm = function (){
     $scope.formContainer = true;
   };
 
-  
+
   $scope.addItem = function(item){
     console.log(item);
 
