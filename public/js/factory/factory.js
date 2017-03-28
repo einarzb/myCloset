@@ -14,10 +14,18 @@ app.factory('factory', function($http){
 
   function removeItem(id){
     return $http.delete('/closetdb/' + id).then(function(response){
-      alert("im delete factory");
+      confirm("are you sure you want to remove this item?");
+      //make confirm work for real in cancel!
       return response.data;
      });
  };
-  return {addItem:addItem, getItems:getItems, removeItem:removeItem}
+
+ function editItem(id){
+   return $http.put('/closetdb/' + id).then(function(response){
+     alert("Im inside edit! service");
+     return response.data;
+    });
+};
+  return {addItem:addItem, getItems:getItems, removeItem:removeItem, editItem:editItem}
 
 });
