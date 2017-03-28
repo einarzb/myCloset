@@ -184,6 +184,7 @@
                 <div class="col-md-3 col-sm-6 item" ng-repeat="item in closet track by $index">
                     <div class="thumbnail">
                         <div class="pull-right">
+                            <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
                             <button type="button" style="background-color:none;" ng-click="editItem($index)"><i class="fa fa-edit" aria-hidden="true"></i></button>
                             <button type="button" style="background-color:none;" ng-click="removeItem($index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </div>
