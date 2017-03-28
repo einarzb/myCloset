@@ -1,8 +1,13 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-
     padding-top: 70px;
 }
+
+nav navbar-nav ul li:first-child {
+   float: right;
+  }
+
+
 .jumbotron {
     margin-top: 50px;
 }
