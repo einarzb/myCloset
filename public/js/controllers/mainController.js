@@ -50,9 +50,14 @@ app.controller('mainController', function($scope, factory) {
       //console.log(index);
       var removedItem = $scope.closet[index]._id;
       //console.log(removedItem);
-      $scope.closet.splice(index, 1);
-      //console.log($scope.closet);
-      //factory.removeItem(removedItem).then
+      factory.removeItem(removedItem)
+      .then(function(response){
+        $scope.closet.splice(index, 1);
+        //console.log($scope.closet);
+      })
+      .catch(function(error){
+        console.log(error);
+      })
     };
 
   // //'import' functions from service

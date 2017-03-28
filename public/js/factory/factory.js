@@ -13,7 +13,7 @@ app.factory('factory', function($http){
   };
 
   function removeItem(id){
-    return $http.delete('/beers/' + id).then(function(response){
+    return $http.delete('/closetdb/' + id).then(function(response){
       alert("im delete factory");
       return response.data;
      });
