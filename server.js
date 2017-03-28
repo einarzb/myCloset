@@ -43,6 +43,19 @@ app.get('/closetdb', function (req, res, next) {
      });
 });
 
+//removing item from db
+app.delete('/closetdb/:id', function (req, res, next) {
+    Item.remove({_id: req.params.id},function (err) {
+          if (err) {
+            console.error(err)
+            return next(err); //express next function. middleware
+          } else {
+            res.send("item is gone");
+          }
+     });
+});
+
+
 
 //start listening
 app.listen(port, function () {

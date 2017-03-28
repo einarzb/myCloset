@@ -10,8 +10,14 @@ app.factory('factory', function($http){
     return $http.get('/closetdb').then(function(response){
       return response.data;
     });
-  }
+  };
 
-  return {addItem:addItem, getItems:getItems}
+  function removeItem(id){
+    return $http.delete('/beers/' + id).then(function(response){
+      alert("im delete factory");
+      return response.data;
+     });
+ };
+  return {addItem:addItem, getItems:getItems, removeItem:removeItem}
 
 });

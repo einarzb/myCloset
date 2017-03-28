@@ -33,20 +33,27 @@ app.controller('mainController', function($scope, factory) {
 
 //adds submitted item onto closet array and send it to DB
   $scope.addItem = function(newItem){
-      // factory.addItem(newItem)
-      // .then(function(response){
+       factory.addItem(newItem)
+      .then(function(response){
         //console.log('response', response);
-        //$scope.closet.push(newItem);
+        $scope.closet.push(newItem);
         $scope.formContainer = false; //hide form
         $scope.thanks = true; //show thanks
         //console.log($scope.closet);
-      // })
-      // .catch(function(error){
-      //   console.log(error);
-      // })
+      })
+      .catch(function(error){
+        console.log(error);
+      })
     };
 
-
+    $scope.removeItem = function(index){
+      //console.log(index);
+      var removedItem = $scope.closet[index]._id;
+      //console.log(removedItem);
+      $scope.closet.splice(index, 1);
+      //console.log($scope.closet);
+      //factory.removeItem(removedItem).then
+    };
 
   // //'import' functions from service
   // 	$scope.beers = service.beers;
