@@ -1,6 +1,7 @@
 app.controller('mainController', function($scope, factory) {
   //toggle form view
   $scope.formContainer = false; //hidden
+  $scope.thanks = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
 
@@ -32,15 +33,17 @@ app.controller('mainController', function($scope, factory) {
 
 //adds submitted item onto closet array and send it to DB
   $scope.addItem = function(newItem){
-      factory.addItem(newItem)
-      .then(function(response){
+      // factory.addItem(newItem)
+      // .then(function(response){
         //console.log('response', response);
-        $scope.closet.push(newItem);
+        //$scope.closet.push(newItem);
+        $scope.formContainer = false; //hide form
+        $scope.thanks = true; //show thanks
         //console.log($scope.closet);
-      })
-      .catch(function(error){
-        console.log(error);
-      })
+      // })
+      // .catch(function(error){
+      //   console.log(error);
+      // })
     };
 
 

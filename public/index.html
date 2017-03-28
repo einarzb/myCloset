@@ -88,6 +88,7 @@
                         </label>
                         <select class="form-control" ng-model="newItem.type">
                             <option value="T-Shirt">Top</option>
+                            <option value="Spaghetti Top">Spaghetti Top</option>
                             <option value="Sweater">Sweater</option>
                             <option value="Pants">Pants</option>
                             <option value="Dress">Dress</option>
@@ -154,8 +155,12 @@
                          </div>
                         </label><br>
                         <label for="image">upload image:<input type="text" name="image" ng-model="newItem.image"></label><br>
-                        <button type="submit" name="button" class="btn btn-info" ng-hide="!formContainer">Submit</button>
+                        <button type="submit" name="button" class="btn btn-info">Submit</button>
                     </form>
+                </div>
+                <!--thank you div-->
+                <div ng-show="thanks" class="text-center thanks">
+                    <p>Thank you!</p>
                 </div>
             </div>
         </header>
@@ -192,6 +197,7 @@
                 </div>
             </div>
         </div>
+
         <hr>
 
         <!-- Footer -->
