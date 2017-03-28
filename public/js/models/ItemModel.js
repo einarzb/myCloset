@@ -1,4 +1,3 @@
-//starting
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -9,8 +8,8 @@ var itemSchema = new Schema ({
   price: Number,
   brand: String,
   condition: String,
-  date: String,
-  image: String
+  purchaseDate: String,
+  image: String //for now images is by url
 });
 
 var Item = mongoose.model('Item', itemSchema);
