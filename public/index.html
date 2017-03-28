@@ -97,7 +97,6 @@
                         <color-picker class="color" ng-model="newItem.color"></color-picker>
                       </label> <br>
                         <label for="size">Pick the size:
-
                         <div class="btn-toolbar" role="toolbar">
                             <div class="btn-group" role="group" ng-selected="newItem.size" ng-model="selected">
                                 <button class="btn btn-default btn-sm" ng-click="newItem.size = 'xs'" type="button" >XS</button>
@@ -109,11 +108,10 @@
                        </div>
 
                       </label> <br>
-                        <label for="price">price <input type="number" name="price" placeholder="price" ng-model="newItem.price"></label><br>
+                        <label for="price">price <input type="number" name="price" placeholder="price" ng-model="newItem.price"></label>
                         <label for="brand">brand <input type="text" name="brand" placeholder="brand" ng-model="newItem.brand"></label><br>
-
                         <label for="fabric">fabric
-                          <select class="form-control" ng-selected="newItem.fabric" ng-model="selected">
+                          <select class="form-control" ng-selected="selected" ng-model="newItem.fabric">
                             <option>Cotton</option>
                             <option>Chiffon</option>
                             <option>Jeans</option>
@@ -123,11 +121,12 @@
                             <option>Denim</option>
                             <option>Satin</option>
                             <option>Flanel</option>
+                            <option>Velvet</option>
                             <option>Other </option>
                           </select>
                         </label>
                         <label for="condition">condition
-                           <select class="form-control" ng-selected="newItem.condition" ng-model="selected">
+                           <select class="form-control" ng-selected="selected" ng-model="newItem.condition">
                              <option>New with tags!</option>
                              <option>Never been worn</option>
                              <option>Old but loveable</option>
@@ -138,11 +137,11 @@
                         </label><br>
                         <label for="season">season
                           <div class="btn-toolbar" role="toolbar">
-                              <div class="btn-group" role="group" ng-selected="newItem.season" ng-model="selected">
-                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'summer'" type="button" >summer</button>
-                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'winter'" type="button">winter</button>
-                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'fall'" type="button" >fall</button>
-                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'spring'" type="button" >spring</button>
+                              <div class="btn-group season" role="group" ng-selected="newItem.season" ng-model="selected">
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'summer'" type="button" ><i class="fa fa-sun-o" aria-hidden="true"></i></button>
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'winter'" type="button"><i class="fa fa-umbrella" aria-hidden="true"></i></button>
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'fall'" type="button" ><i class="fa fa-leaf" aria-hidden="true"></i></button>
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'spring'" type="button"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span></button>
                               </div>
                          </div>
                         </label><br>
@@ -173,8 +172,7 @@
                     <div class="caption">
                         <h3>{{item.type}}</h3>
                         <p><strong>color:</strong> {{item.color}} <strong>size:</strong> {{item.size}} <br>
-                            <strong>fabric:</strong> {{item.fabric}}<br>
-                            <strong>brand:</strong> {{item.brand}}<br>
+                            <strong>fabric:</strong> {{item.fabric}}<strong>brand:</strong> {{item.brand}}<br>
                             <strong>condition:<strong> {{item.condition}} <br>
                             <strong>season: </strong> {{item.season}}
                         </p>
