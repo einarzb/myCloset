@@ -8,38 +8,40 @@ app.controller('mainController', function($scope, factory) {
   $scope.openForm = function (){
     $scope.formContainer = true;//reveal form
   };
+
 //sorting buttons should change the sort by index
-$scope.sortType = function (){
-  alert("im not working yet");
-};
-$scope.sortColor = function (){
-  alert("im not working too");
-};
+  $scope.sortType = function (){
+    alert("im not working yet");
+  };
+  $scope.sortColor = function (){
+    alert("im not working too");
+  };
 
 //getting items from db
-$scope.getItems = factory.getItems;
+  $scope.getItems = factory.getItems;
 
-$scope.getItems()
-.then(function(result){
-  console.log(result);
-  $scope.closet = result; //the items are populating the array
-})
-.catch(function(error){
-  console.log(error);
-})
+  $scope.getItems()
+  .then(function(response){
+    console.log(response);
+    $scope.closet = response; //the items are populating the array
+    console.log($scope.closet);
+  })
+  .catch(function(error){
+    console.log(error);
+  })
 
 //adds submitted item onto closet array and send it to DB
-$scope.addItem = function(newItem){
-    factory.addItem(newItem)
-    .then(function(response){
-      //console.log('response', response);
-      $scope.closet.push(newItem);
-      //console.log($scope.closet);
-    })
-    .catch(function(error){
-      console.log(error);
-    })
-  };
+  $scope.addItem = function(newItem){
+      factory.addItem(newItem)
+      .then(function(response){
+        //console.log('response', response);
+        $scope.closet.push(newItem);
+        //console.log($scope.closet);
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+    };
 
 
 

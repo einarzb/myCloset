@@ -137,6 +137,14 @@
                            </select>
                         </label><br>
                         <label for="season">season
+                          <div class="btn-toolbar" role="toolbar">
+                              <div class="btn-group" role="group" ng-selected="newItem.season" ng-model="selected">
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'summer'" type="button" >summer</button>
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'winter'" type="button">winter</button>
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'fall'" type="button" >fall</button>
+                                  <button class="btn btn-default btn-sm" ng-click="newItem.season = 'spring'" type="button" >spring</button>
+                              </div>
+                         </div>
                         </label><br>
                         <label for="image">upload image:<input type="text" name="image" ng-model="newItem.image"></label><br>
                         <button type="submit" name="button" class="btn btn-info" ng-hide="!formContainer">Submit</button>
