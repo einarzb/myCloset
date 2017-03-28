@@ -30,6 +30,20 @@ app.post('/closetdb', function(req, res, next) {
   });
 });
 
+//populating items from db
+app.get('/closetdb', function (req, res, next) {
+    Item.find(function (error, cloestdb) { //beers is db name
+          if (error) {
+            console.error(error)
+            return next(error); //express next function. middleware
+          } else {
+            res.send(cloestdb);
+            console.log(cloestdb);
+          }
+     });
+});
+
+
 //start listening
 app.listen(port, function () {
 	console.log(port + " is broadcasting");

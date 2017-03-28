@@ -8,6 +8,7 @@ var itemSchema = new Schema ({
   price: Number,
   brand: String,
   condition: String,
+	fabric: String,
   purchaseDate: String,
   image: String //for now images is by url
 });

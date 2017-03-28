@@ -9,12 +9,16 @@ app.controller('mainController', function($scope, factory) {
     $scope.formContainer = true;//reveal form
   }
 
+//getting items from db
+$scope.getItems = factory.getItems;
+
 //adds submitted item onto closet array and send it to DB
-  $scope.addItem = function(newItem){
-    factory.addItem(newItem).then(function(response){
-      console.log('response', response);
-      $scope.closet.push(response);
-      console.log($scope.closet);
+$scope.addItem = function(newItem){
+    factory.addItem(newItem)
+    .then(function(response){
+      //console.log('response', response);
+      $scope.closet.push(newItem);
+      //console.log($scope.closet);
     })
     .catch(function(error){
       console.log(error);
