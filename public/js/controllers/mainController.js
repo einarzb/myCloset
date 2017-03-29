@@ -1,7 +1,8 @@
 app.controller('mainController', function($scope, factory) {
   //toggle form view
-  $scope.formContainer = false; //hidden
-  $scope.thanks = false; //hidden
+  this.formContainer = false; //hidden
+  this.thanks = false; //hidden
+  this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
 
@@ -37,8 +38,8 @@ app.controller('mainController', function($scope, factory) {
       .then(function(response){
         //console.log('response', response);
         $scope.closet.push(newItem);
-        $scope.formContainer = false; //hide form
-        $scope.thanks = true; //show thanks
+        this.formContainer = false; //hide form
+        this.thanks = true; //show thanks
         //console.log($scope.closet);
       })
       .catch(function(error){
@@ -46,13 +47,11 @@ app.controller('mainController', function($scope, factory) {
       })
     };
 
-    $scope.removeItem = function(index){
-      //console.log(index);
-      var removedItem = $scope.closet[index]._id;
-      //console.log(removedItem);
-      factory.removeItem(removedItem)
+//delete item
+    $scope.removeItem = function(id){
+      factory.removeItem(id)
       .then(function(response){
-        $scope.closet.splice(index, 1);
+        $scope.closet.splice(id, 1);
         //console.log($scope.closet);
       })
       .catch(function(error){
@@ -60,21 +59,27 @@ app.controller('mainController', function($scope, factory) {
       })
     };
 
-    $scope.editItem = function(index){
+//edit item
+    $scope.editItem = function(id){
       //console.log(index);
-      var editedItem = $scope.closet[index]._id;
-      console.log(editedItem);
-
-      factory.editItem(editedItem)
-      .then(function(response){
+      //var editedItem = $scope.closet[index]._id;
+      //console.log(editedItem);
+      alert(id);
+      // factory.editItem(editedItem)
+      // .then(function(response){
+      //   alert(editedItem);
         //toggle for editing items
-        $scope.edit = false;
+        this.editMode = true;
         //console.log($scope.closet);
-      })
-      .catch(function(error){
-        console.log(error);
-      })
+      // })
+      // .catch(function(error){
+      //   console.log(error);
+      // })
     };
+
+    $scope.saveEdit = function(index){
+      alert("save me");
+    }
 
   // //'import' functions from service
   // 	$scope.beers = service.beers;

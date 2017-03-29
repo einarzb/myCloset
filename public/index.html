@@ -83,11 +83,11 @@
                     <img class="hanger" src="images/hanger.png" />
                     <h4><em>INDEX YOUR CLOSET</em></h4>
                     <!-- action="http://localhost:3000/" -->
-                    <form class="form" method="post" ng-submit="addItem(newItem)">
+                    <form class="form" ng-submit="addItem(newItem)">
                         <label> select type:
                         </label>
                         <select class="form-control" ng-model="newItem.type">
-                            <option value="T-Shirt">Top</option>
+                            <option value="Top">Top</option>
                             <option value="Spaghetti Top">Spaghetti Top</option>
                             <option value="Sweater">Sweater</option>
                             <option value="Pants">Pants</option>
@@ -98,7 +98,7 @@
                             <option value="Rain Coat">Rain Coat</option>
                             <option value="Sport Jacket">Sport Jacket</option>
                             <option value="Tights">Tights</option>
-                            <option value="Tights">Shorts</option>
+                            <option value="Shorts">Shorts</option>
                             <option value="Overall">Overall</option>
                             <option value="Other">Other</option>
                       </select>
@@ -116,9 +116,10 @@
                             </div>
                        </div>
 
-                      </label> <br>
-                        <label for="price">price <input type="number" min="0" name="price" placeholder="price" ng-model="newItem.price"></label>
-                        <label for="brand">brand <input type="text" name="brand" placeholder="brand" ng-model="newItem.brand"></label><br>
+                     </label> <br>
+                        <div class="brandPrice">
+                            <label for="price">price </label> <input type="number" min="0" class="price form-control" placeholder="price" ng-model="newItem.price">
+                            <label for="brand">brand </label> <input type="text" class="brand form-control" placeholder="brand" ng-model="newItem.brand"></div><br>
                         <label for="fabric">fabric
                           <select class="form-control" ng-selected="selected" ng-model="newItem.fabric">
                             <option>Cotton</option>
@@ -155,7 +156,7 @@
                               </div>
                          </div>
                         </label><br>
-                        <label for="image">upload image:<input type="text" name="image" ng-model="newItem.image"></label><br>
+                        <label for="image">upload image:<input type="text" class="form-control" name="image" ng-model="newItem.image"></label><br>
                         <button type="submit" name="button" class="btn btn-info">Submit</button>
                     </form>
                 </div>
@@ -183,12 +184,13 @@
             <div class="row text-center">
                 <div class="col-md-3 col-sm-6 item" ng-repeat="item in closet track by $index">
                     <div class="thumbnail">
+                        <!--buttons-->
                         <div class="pull-right">
                             <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-                            <button type="button" style="background-color:none;" ng-click="editItem($index)"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                            <button type="button" style="background-color:none;" ng-click="removeItem($index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <button type="button" style="background-color:none;" ng-click="editItem(item._id)" ng-show="!editMode"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            <button type="button" style="background-color:none;" ng-click="removeItem(item._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </div>
-
+                        <!--the real deal-->
                         <img ng-src="{{item.image}}" alt="" />
                         <div class="caption">
                             <h4>{{item.type}} /<span class="h5"> {{item.brand}}</span></h4>
@@ -201,6 +203,11 @@
                             <p>
                                 <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">Mix & Match</a>
                             </p>
+                        </div>
+                        <!--edit inputs-->
+                        <div class="editItems" ng-show="editMode">
+                            <input type="text" placeholder="{{newItem.type}}" ng-model="editedItem.price"> <br>
+                            <button type="button" style="background-color:none;" ng-click="saveEdit(editedItem, $index)"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>

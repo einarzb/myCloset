@@ -2,6 +2,9 @@ body {
   font-family: 'Ubuntu', sans-serif;
     padding-top: 70px;
 }
+.brandPrice{display: inline;}
+.price{width:70px;}
+.brand{width:200px;}
 .season {font-size: 24px;}
 .thanks{margin-top:200px;}
 .jumbotron {
