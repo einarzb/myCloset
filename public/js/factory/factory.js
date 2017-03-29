@@ -22,7 +22,6 @@ app.factory('factory', function($http){
 
  function editItem(id){
    return $http.put('/closetdb/' + id).then(function(response){
-     alert("Im inside edit! service");
      return response.data;
     });
 };

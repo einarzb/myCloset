@@ -61,20 +61,14 @@ app.controller('mainController', function($scope, factory) {
 
 //edit item
     $scope.editItem = function(id){
-      //console.log(index);
-      //var editedItem = $scope.closet[index]._id;
-      //console.log(editedItem);
-      alert(id);
-      // factory.editItem(editedItem)
-      // .then(function(response){
-      //   alert(editedItem);
-        //toggle for editing items
-        this.editMode = true;
-        //console.log($scope.closet);
-      // })
-      // .catch(function(error){
-      //   console.log(error);
-      // })
+      this.editMode = true;
+      console.log(id);
+      factory.editItem(id)
+      .then(function(response){
+      })
+      .catch(function(error){
+        console.log(error);
+      })
     };
 
     $scope.saveEdit = function(index){
