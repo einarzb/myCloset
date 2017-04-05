@@ -1,12 +1,10 @@
 //require express dependancy for node work
 var express = require('express');
 var app = express();
-//declare port (heroku publication)
-var port = /*process.env.PORT ||*/ 3000;
 
 //require mongoose dependancy
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/closetdb");
+mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/closetdb");
 var Item = require("./public/js/models/ItemModel.js");
 
 //body parser middleware
@@ -73,6 +71,6 @@ app.put('/closetdb/:id', function(req, res, next){
 
 
 //start listening
-app.listen(port, function () {
-	console.log(port + " is broadcasting");
+app.listen(process.env.PORT || '8080') {
+	console.log("CLUESET EVERY GIRLS DREAM");
 });
