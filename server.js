@@ -72,5 +72,5 @@ app.put('/closetdb/:id', function(req, res, next){
 
 //start listening
 app.listen(process.env.PORT || '8080', function() {
-	console.log("CLUESET EVERY GIRLS DREAM");
+	console.log("CLUESET EVERY GIRLS DREAM port 8080");
 });
