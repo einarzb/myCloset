@@ -19,6 +19,12 @@ app.config(['$stateProvider','$urlRouterProvider','$locationProvider', function(
       templateUrl: '/templates/partial-home.html'
   })
 
+  .state('shop', {
+      url: '/shop',
+      controller:'mainController',
+      templateUrl: '/templates/partial-home-shop.html'
+  })
+
   // .state('beer', {
   //     url: '/reviews/:id',
   //     params: {
