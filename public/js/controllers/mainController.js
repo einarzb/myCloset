@@ -2,6 +2,7 @@ app.controller('mainController', function($scope, factory, $state) {
   //toggle form view
   // this.formContainer = true; //hidden
   this.thanks = false; //hidden
+  this.sellForm = false;
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
@@ -40,6 +41,13 @@ app.controller('mainController', function($scope, factory, $state) {
         console.log(error);
       })
     };
+
+$scope.sellFormBtn= function(){
+  this.sellForm = true;
+}
+$scope.sellItem = function(newItem){
+
+}
 
 //delete item
     $scope.removeItem = function(id){
