@@ -1,41 +1,41 @@
 var app = angular.module('closetApp', ['ui.router','color.picker']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider.state('about', {
-    url: '/about',
-    templateUrl: '../templates/partial-about.html'
-  });
-});
+app.config(['$stateProvider','$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  //'default' state
+  $urlRouterProvider.otherwise('/home');
+  //hashbang fix
+  $locationProvider.html5Mode(true);
 
-// app.config(['$stateProvider','$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
-//   //hashbang fix
-//   $locationProvider.html5Mode(true);
-//
-  // $stateProvider
-  //   .state('home', {
-  //     url: '/home',
-  //     controller:'mainController',
-  //     templateUrl: '/templates/home.html'
-  //   })
-  //   .state('beer', {
+  $stateProvider
+
+  .state('clueset', {
+    url: '/clueset',
+    templateUrl: '../templates/partial-myCloest.html'
+  })
+
+  .state('home', {
+      url: '/home',
+      controller:'mainController',
+      templateUrl: '/templates/partial-home.html'
+  })
+
+  // .state('beer', {
   //     url: '/reviews/:id',
   //     params: {
   //     	beerParam: null
   //     },
   //     controller: 'beerController',
   //     templateUrl: '/templates/beer.html'
-  //   })
-  //   .state('register', {
+  // })
+  // .state('register', {
   //     url: '/register',
   //     templateUrl: '/templates/register.html',
   //     controller: 'authController'
-  //   })
-  //   .state('login', {
+  // })
+  // .state('login', {
   //     url: '/login',
   //     templateUrl: '/templates/login.html',
   //     controller: 'authController'
-  //   })
-  //
-  //   //'default' state
-  //   $urlRouterProvider.otherwise('/home');
-// }]);
+  // })
+
+}]);

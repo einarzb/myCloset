@@ -1,15 +1,10 @@
-app.controller('mainController', function($scope, factory) {
+app.controller('mainController', function($scope, factory, $state) {
   //toggle form view
-  this.formContainer = false; //hidden
+  // this.formContainer = true; //hidden
   this.thanks = false; //hidden
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
-
-//reveals form on-click
-  $scope.openForm = function (){
-    $scope.formContainer = true;//reveal form
-  };
 
 //sorting buttons should change the sort by index
   $scope.sortType = function (){
@@ -38,8 +33,7 @@ app.controller('mainController', function($scope, factory) {
       .then(function(response){
         //console.log('response', response);
         $scope.closet.push(newItem);
-        this.formContainer = false; //hide form
-        this.thanks = true; //show thanks
+        $state.go('clueset');
         //console.log($scope.closet);
       })
       .catch(function(error){
