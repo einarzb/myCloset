@@ -1,8 +1,9 @@
 var app = angular.module('closetApp', ['ui.router','color.picker']);
 
-app.config(['$stateProvider','$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(['$stateProvider','$urlRouterProvider','$locationProvider',
+          function($stateProvider, $urlRouterProvider, $locationProvider) {
   //'default' state
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('home');
   //hashbang fix
   $locationProvider.html5Mode(true);
 
