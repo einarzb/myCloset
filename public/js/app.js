@@ -1,14 +1,10 @@
 var app = angular.module('closetApp', ['ui.router','color.picker']);
 
-app.config(['$stateProvider','$urlRouterProvider','$locationProvider',
-          function($stateProvider, $urlRouterProvider, $locationProvider) {
-  //'default' state
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('home');
-  //hashbang fix
   $locationProvider.html5Mode(true);
 
   $stateProvider
-
   .state('home', {
       url: '/home',
       controller:'mainController',
@@ -18,32 +14,13 @@ app.config(['$stateProvider','$urlRouterProvider','$locationProvider',
   .state('closet', {
       url: '/closet',
       controller:'mainController',
-      templateUrl: '/templates/partial-cloest.html'
+      templateUrl: '/templates/closet.html'
     })
 
   .state('shop', {
       url: '/shop',
       controller:'mainController',
-      templateUrl: '/templates/partial-shop.html'
+      templateUrl: '/templates/shop.html'
   })
 
-  // .state('beer', {
-  //     url: '/reviews/:id',
-  //     params: {
-  //     	beerParam: null
-  //     },
-  //     controller: 'beerController',
-  //     templateUrl: '/templates/beer.html'
-  // })
-  // .state('register', {
-  //     url: '/register',
-  //     templateUrl: '/templates/register.html',
-  //     controller: 'authController'
-  // })
-  // .state('login', {
-  //     url: '/login',
-  //     templateUrl: '/templates/login.html',
-  //     controller: 'authController'
-  // })
-
-}]);
+});
