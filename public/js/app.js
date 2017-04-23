@@ -22,5 +22,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller:'mainController',
       templateUrl: '/templates/shop.html'
   })
+  .state('signup', {
+      url: '/signup',
+      controller:'authController',
+      templateUrl: '/templates/signup.html'
+  })
+  .state('login', {
+      url: '/login',
+      controller:'authController',
+      templateUrl: '/templates/login.html'
+  })
 
 });
