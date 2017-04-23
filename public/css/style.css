@@ -4,20 +4,24 @@ body {
 }
 .brandPrice{display: inline;}
 .brand{width:200px;}
-.season {font-size: 24px;}
+.price{width:90px;}
+.season {font-size: 5em;}
 .thanks{margin-top:200px;}
 .jumbotron {
     margin-top: 50px;
 }
 
 .thumbnail {
-  height: 550px;
+  height: 520px;
   width:280px;
 }
 
 .thumbnail img {
-  max-height:275px;
-  max-width:260px;
+  min-height:270px;
+  max-height:290px;
+  max-width:270px;
+  margin-bottom: -10px;
+  margin-top:30px;
 }
 
 .pricetag{
