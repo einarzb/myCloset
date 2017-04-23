@@ -21,8 +21,8 @@
                 <img ng-src="{{item.image}}" alt="" />
                 <div class="caption">
                     <h4>{{item.type}} /<span class="h5"> {{item.brand}}</span></h4>
-                    <h5>{{item.price | currency}}</h5>
-                    <p class="text-left"><strong>color:</strong> {{item.color}} <strong>size:</strong> {{item.size}} <br>
+                    <h5><span class="price">{{item.price | currency}}</span> | &nbsp;<strong>size:</strong> {{item.size}} </h5>
+                    <p class="text-left"><strong>color:</strong> {{item.color}}<br>
                         <strong>fabric:</strong> {{item.fabric}}<br>
                         <strong>condition:<strong> {{item.condition}} <br>
                     <strong>season: </strong> {{item.season}}
