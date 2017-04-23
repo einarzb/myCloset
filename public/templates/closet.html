@@ -20,8 +20,11 @@
                 <!--the real deal-->
                 <img ng-src="{{item.image}}" alt="" />
                 <div class="caption">
-                    <h4>{{item.type}} /<span class="h5"> {{item.brand}}</span></h4>
-                    <p class="text-left"><strong>color:</strong> {{item.color}} <br>
+                  <h4>{{item.type}} | {{item.brand}}</h4>
+                    <p class="text-left">
+                      <h4><span class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
+                      &nbsp;&nbsp;&nbsp;</span>
+                      <br>
                     <strong>season: </strong> {{item.season}}
                     </p>
                     <p>
