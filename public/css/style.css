@@ -11,10 +11,41 @@ body {
     margin-top: 50px;
 }
 
-.price {
-  background-color: red;
-  color: #fff;
+.pricetag{
+    white-space:nowrap;
+    position:relative;
+    margin:0 5px 0 10px;
+    displaY:inline-block;
+    height:25px;
+    border-radius: 0 5px 5px 0;
+    padding: 0 5px 0 15px;
+    background:red;
+    border: 0 solid #C7D2D4;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    color: #fff;
+    line-height:23px;
 }
+.pricetag:after{
+    position:absolute;
+    right:0;
+    margin:1px 2px;
+    font-weight:bold;
+}
+.pricetag:before{
+    position:absolute;
+    content:"\25CF";
+    color: #fff;
+    text-shadow: 0 0 1px #333;
+    font-size:11px;
+    line-height:0px;
+    text-indent:12px;
+    left:-12px;
+    width: 2px;
+    height:2px;
+    border-right:11px solid red;
+    border-top:  11px solid transparent;
+    border-bottom:  13px solid transparent;
 
 .item {
     margin-bottom: 30px;
