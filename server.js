@@ -69,6 +69,26 @@ app.put('/closetdb/:id', function(req, res, next){
   });
 });
 
+//importent!
+app.all('*', function(req, res) {
+  res.sendFile(__dirname + "/public/index.html")
+});
+
+//404 error
+app.use(function(req, res, next){
+  var err = new Error('Not found');
+  err.status = 404;
+  next(err);
+});
+
+// main error handler -  warning - not for use in production code!
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.send({
+    message: err.message,
+    error: err
+  });
+});
 
 //start listening
 app.listen(process.env.PORT || '2020', function() {

@@ -48,18 +48,29 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a ui-sref="closet">closet</a>
+                        <a ui-sref="closet">clueSet</a>
                     </li>
                     <li>
                         <a ui-sref="shop">clueShop</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav" style="float: right">
+                <ul class="nav navbar-nav" style="float:right">
                     <li>
-                        <a ui-sref="signin" class="navbar-nav pull-right"><i class="fa fa-user" style="color:pink;font-size:15px;"></i>   Sign In</a>
+                        <a ui-sref="login" class="navbar-nav pull-right">
+                          <i class="fa fa-user" style="color:pink;font-size:15px;"></i>
+                          login /
+                        </a>
                     </li>
                     <li>
-                        <a ui-sref="#cart" class="navbar-nav"> <i class="fa fa-shopping-bag" style="color:#fff" aria-hidden="true"></i></a>
+                        <a ui-sref="signup" class="navbar-nav pull-right">
+                          <!-- <i class="fa fa-user" style="color:pink;font-size:15px;"></i> -->
+                          signup
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="cart" class="navbar-nav">
+                          <i class="fa fa-shopping-bag" style="color:#fff" aria-hidden="true"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
