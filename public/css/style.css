@@ -10,6 +10,16 @@ body {
     margin-top: 50px;
 }
 
+.thumbnail {
+  height: 650px;
+  width:280px;
+}
+
+.thumbnail img {
+  max-height:275px;
+  max-width:260px;
+}
+
 .pricetag{
     white-space:nowrap;
     position:relative;
