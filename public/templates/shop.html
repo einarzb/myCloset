@@ -20,9 +20,10 @@
                 <img ng-src="{{item.image}}" alt="" />
                 <div class="caption">
                     <h4>{{item.type}} | {{item.brand}}</h4>
-                    <h4><span class="pricetag">{{item.price | currency}}</span> | &nbsp;<strong>size:</strong> {{item.size}} <div class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
-                    </div></h4>
+                    <h4><span class="pricetag">{{item.price | currency}}</span> | &nbsp;<span class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
+                    &nbsp;&nbsp;&nbsp;</span> |  &nbsp; <span style="font-size:1.2em">{{item.size}} </span>  &nbsp;</h4>
                     <p class="text-left">
+                       <br>
                         <strong>fabric:</strong> {{item.fabric}}<br>
                         <strong>condition:<strong> {{item.condition}} <br>
                     <strong>season: </strong> {{item.season}}
