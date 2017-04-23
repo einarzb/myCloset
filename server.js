@@ -5,7 +5,7 @@ var app = express();
 //require mongoose dependancy
 var mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/closetdb");
-var Item = require("./public/js/models/ItemModel.js");
+var Item = require("./models/ItemModel.js");
 
 //body parser middleware
 var bodyParser = require('body-parser');
@@ -71,6 +71,6 @@ app.put('/closetdb/:id', function(req, res, next){
 
 
 //start listening
-app.listen(process.env.PORT || '8080', function() {
-	console.log("CLUESET EVERY GIRLS DREAM port 8080");
+app.listen(process.env.PORT || '2020', function() {
+	console.log("CLUESET EVERY GIRLS DREAM");
 });

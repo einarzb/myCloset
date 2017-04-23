@@ -23,19 +23,27 @@
                 <label> select type:
                 </label>
                 <select class="form-control" style="width:300px;" ng-model="newItem.type">
+                  <optgroup label="pants">
+                    <option value="Pants">Pants</option>
+                    <option value="Tights">Tights</option>
+                    <option value="Shorts">Shorts</option>
+                  </optgroup>
+                  <optgroup label="tops">
                     <option value="Top">Top</option>
                     <option value="Spaghetti Top">Spaghetti Top</option>
+                  </optgroup>
+                  <optgroup label="coats">
                     <option value="Sweater">Sweater</option>
-                    <option value="Pants">Pants</option>
-                    <option value="Dress">Dress</option>
-                    <option value="Skirt">Skirt</option>
                     <option value="Jacket">Jacket</option>
                     <option value="Coat">Coat</option>
                     <option value="Rain Coat">Rain Coat</option>
                     <option value="Sport Jacket">Sport Jacket</option>
+                  </optgroup>
+                  <optgroup label="skirts">
+                    <option value="Dress">Dress</option>
+                    <option value="Skirt">Skirt</option>
+                  </optgroup>
                     <option value="Vest">Vest</option>
-                    <option value="Tights">Tights</option>
-                    <option value="Shorts">Shorts</option>
                     <option value="Overall">Overall</option>
                     <option value="Other">Other</option>
               </select>

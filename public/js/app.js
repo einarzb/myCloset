@@ -9,21 +9,22 @@ app.config(['$stateProvider','$urlRouterProvider','$locationProvider',
 
   $stateProvider
 
-  .state('clueset', {
-    url: '/clueset',
-    templateUrl: '../templates/partial-myCloest.html'
-  })
-
   .state('home', {
       url: '/home',
       controller:'mainController',
       templateUrl: '/templates/partial-home.html'
   })
 
+  .state('closet', {
+      url: '/closet',
+      controller:'mainController',
+      templateUrl: '/templates/partial-cloest.html'
+    })
+
   .state('shop', {
       url: '/shop',
       controller:'mainController',
-      templateUrl: '/templates/partial-home-shop.html'
+      templateUrl: '/templates/partial-shop.html'
   })
 
   // .state('beer', {

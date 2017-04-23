@@ -34,7 +34,7 @@ app.controller('mainController', function($scope, factory, $state) {
       .then(function(response){
         //console.log('response', response);
         $scope.closet.push(newItem);
-        $state.go('clueset');
+        $state.go('closet');
         //console.log($scope.closet);
       })
       .catch(function(error){
