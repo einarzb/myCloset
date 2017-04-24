@@ -1,4 +1,4 @@
-app.controller('mainController', function($scope, factory, $state) {
+app.controller('mainController', function($scope, factory, $state, Upload, $timeout) {
   //toggle form view
   // this.formContainer = true; //hidden
   this.thanks = false; //hidden
@@ -47,6 +47,10 @@ $scope.sellFormBtn= function(){
 }
 $scope.sellItem = function(newItem){
 
+}
+
+$scope.uploadFiles = function(){
+  alert("upload moi");
 }
 
 //delete item

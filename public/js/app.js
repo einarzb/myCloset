@@ -1,4 +1,4 @@
-var app = angular.module('closetApp', ['ui.router','color.picker']);
+var app = angular.module('closetApp', ['ui.router','color.picker','ngFileUpload']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('home');
