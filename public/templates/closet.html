@@ -1,7 +1,6 @@
 <section>
   <div class="row">
       <div class="col-lg-12">
-          <h3>Recent items for sale</h3>
           <button type="button" class="btn btn-info" ng-click="sortType()">Sort by Type</button>
           <button type="button" class="btn btn-success" ng-click="sortColor()">Sort by Color</button>
       </div>
@@ -11,7 +10,7 @@
     <div class="row text-center">
       <div ng-repeat="item in closet track by $index">
         <div class="clearfix" ng-if="$index % 4 == 0"></div>
-          <div class="col-md-3 col-sm-6 item thumbnailCloset">
+          <div class="col-md-3 col-sm-6 item thumbnail">
                 <!--buttons-->
                 <div class="pull-right">
                     <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
@@ -36,6 +35,4 @@
             </div>
         </div>
     </div>
-</section>
-
 <div ui-view></div>
