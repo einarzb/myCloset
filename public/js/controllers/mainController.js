@@ -1,4 +1,4 @@
-app.controller('mainController', function($scope, factory, $state, Upload, $timeout) {
+app.controller('mainController', function($scope, factory, $state) {
   //toggle form view
   // this.formContainer = true; //hidden
   this.thanks = false; //hidden
