@@ -11,15 +11,32 @@ body {
     margin-top: 50px;
 }
 
+.thumbnailCloset{
+  height: 330px;
+  width:260px;
+  margin-left: 12px;
+}
+
+
+.thumbnailCloset img {
+  min-height:250px;
+  max-height:270px;
+  max-width:240px;
+  margin-bottom: -10px;
+  margin-top:30px;
+}
+
 .thumbnail {
   height: 530px;
   width:280px;
+  margin-left: 12px;
+
 }
 
 .thumbnail img {
   min-height:270px;
   max-height:290px;
-  max-width:270px;
+  max-width:290px;
   margin-bottom: -10px;
   margin-top:30px;
 }
@@ -62,6 +79,7 @@ body {
 
 .item {
     margin-bottom: 30px;
+
 }
 
 footer {

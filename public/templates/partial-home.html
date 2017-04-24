@@ -67,7 +67,7 @@
             <br>
             <label for="image">upload image:<input type="text" class="form-control" name="image" ng-model="newItem.image"></label><br>
             <button type="submit" name="button" class="btn btn-info">Submit</button>
-            <button type="button" class="btn btn-link btn-sm pricetag" ng-show="!sellForm" ng-click="sellFormBtn()">put your item on sale</button>
+            <button type="button" class="btn btn-link btn-sm pricetag" ng-show="!sellForm" ng-click="sellFormBtn()">list your item</button>
         </form>
         <br>
         <form class="form" name="saleForm" ng-submit="sellItem(newItem)" ng-show="sellForm">
