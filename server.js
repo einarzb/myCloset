@@ -6,6 +6,7 @@ var app = express();
 var mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/closetdb");
 var Item = require("./models/ItemModel.js");
+var Look = require("./models/lookModel.js");
 
 //body parser middleware
 var bodyParser = require('body-parser');
@@ -27,6 +28,19 @@ app.post('/closetdb', function(req, res, next) {
     }
   });
 });
+
+//adding looks
+app.post('/closetdb', function(req, res, next) {
+  Look.create(req.body, function(err, item) {
+    if (err) {
+      console.error(err)
+      return next(err);
+    } else {
+      res.send(item);
+    }
+  });
+});
+
 
 //populating items from db
 app.get('/closetdb', function (req, res, next) {

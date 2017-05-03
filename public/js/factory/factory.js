@@ -5,6 +5,15 @@ app.factory('factory', function($http){
       return response.data;//happens later on the future
     });
   };
+//function add looks
+  function addLook (newLook){
+    console.log("im in factoryryryryr");
+    return $http.post('/closetdb', newLook).then(function(response){
+      return response.data; //happens later on the future
+      console.log(response.data);
+    });
+  };
+
 //function get itmes populated in mongoose to the ctrler
   function getItems(){
     return $http.get('/closetdb').then(function(response){

@@ -1,44 +1,55 @@
 app.controller('mainController', function($scope, factory, $state) {
-  //toggle form view
-  // this.formContainer = true; //hidden
-  this.thanks = false; //hidden
-  this.sellForm = false;
+  //toggle view
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
+  $scope.looks=[];
   $scope.mixItem;
   //array of objects
   var types = {
+    "leggings":"bottom",
+    "mini":"bottom",
+    "midi":"bottom",
+    "maxi":"bottom",
+    "asymmetrical":"bottom",
+    "pencil":"bottom",
+    "strapless":null,
+    "backless":null,
+    "blackdress":null,
+    "jumpsuit":null,
+    "romper":null,
+    "skinny":"bottom",
     "pants":"bottom",
     "tights":"bottom",
     "shorts":"bottom",
-    "top":"top",
+    "blouses":"top",
+    "crop":"top",
+    "tank":"top",
+    "long":"top",
+    "short":"top",
+    "tunics":"top",
     "spaghetti":"top",
     "sweater":"top",
     "jacket":"top",
-    "Coat":"top",
+    "coat":"top",
     "rainCoat":"top",
     "sportJacket":"top",
-    "Dress": null,
-    "Skirt":"bottom",
-    "Vest":"top",
-    "overall":null,
+    "dress": null,
+    "skirt":"bottom",
+    "vest":"top",
     "other":null
   };
 
 //mix and match
 $scope.mix = function (item){
   $scope.mixItem = item;
-  console.log($scope.mixItem);
-  console.log($scope.mixItem.type);
-  console.log (types[item.type]);//bottom
-  console.log(item.type); //skirt
+  // console.log($scope.mixItem); //whole object
+  // console.log($scope.mixItem.type);//top
+  // console.log (types[item.type]);//top
+  // console.log(item.type); //top/skirt/whatever
 
   var matchItems =[];
-
   $scope.isTop = types[item.type] == "top";
-  console.log($scope.isTop);
-  //$scope.isBottom = types[item.type] == "bottom";
 
   if($scope.isTop){
     matchItems = $scope.closet.filter(function(item){
@@ -46,7 +57,7 @@ $scope.mix = function (item){
   });
 
     // console.log($scope.closet);
-    // console.log(matchItems); //
+    // console.log(matchItems);
     // console.log (item.type);
     // console.log("im top")
 
@@ -58,6 +69,27 @@ $scope.mix = function (item){
 }
     $scope.matchItems = matchItems;
 }
+
+
+
+//adidng look
+$scope.addLook = function(newLook){
+      var top = $scope.matchItems[0].image;
+      var base = $scope.mixItem.image;
+      var newLook = [top, base];
+      console.log(newLook);
+      console.log(top);
+      console.log(base);
+    factory.addLook(newLook)
+    .then(function(response){
+      $scope.looks.push(newLook);
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+    $state.go('look');
+
+  };
 
 //sorting buttons should change the sort by index
   $scope.sortType = function (){
@@ -72,9 +104,7 @@ $scope.mix = function (item){
 
   $scope.getItems()
   .then(function(response){
-    console.log(response);
     $scope.closet = response; //the items are populating the array
-    console.log($scope.closet);
   })
   .catch(function(error){
     console.log(error);
@@ -93,13 +123,6 @@ $scope.mix = function (item){
         console.log(error);
       })
     };
-
-$scope.sellFormBtn= function(){
-  this.sellForm = true;
-}
-$scope.sellItem = function(newItem){
-
-}
 
 $scope.uploadFiles = function(){
   alert("upload moi");

@@ -22,6 +22,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller:'mainController',
       templateUrl: '/templates/shop.html'
   })
+  .state('look', {
+      url: '/look',
+      controller:'mainController',
+      templateUrl: '/templates/look.html'
+  })
   .state('signup', {
       url: '/signup',
       controller:'authController',

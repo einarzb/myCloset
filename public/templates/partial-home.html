@@ -25,13 +25,19 @@
                 </label>
                 <select class="form-control" style="width:300px;" required ng-model="newItem.type">
                   <optgroup label="pants">
+                    <option value="leggings">Leggings</option>
                     <option value="pants">Pants</option>
                     <option value="tights">Tights</option>
                     <option value="shorts">Shorts</option>
+                    <option value="skinny">Skinny</option>
                   </optgroup>
                   <optgroup label="tops">
-                    <option value="top">Top</option>
-                    <option value="spaghetti">Spaghetti Top</option>
+                    <option value="blouses">Blouses</option>
+                    <option value="crop">Crop Top</option>
+                    <option value="tank">Tank Top</option>
+                    <option value="long">Long Sleeve</option>
+                    <option value="short">Short Sleeve</option>
+                    <option value="tunics">Tunics</option>
                   </optgroup>
                   <optgroup label="coats">
                     <option value="sweater">Sweater</option>
@@ -41,12 +47,25 @@
                     <option value="sportJacket">Sport Jacket</option>
                   </optgroup>
                   <optgroup label="skirts">
-                    <option value="dress">Dress</option>
                     <option value="skirt">Skirt</option>
+                    <option value="mini">Mini</option>
+                    <option value="midi">Midi</option>
+                    <option value="maxi">Maxi</option>
+                    <option value="pencil">Pencil</option>
+                    <option value="asymmetrical">Asymmetrical</option>
                   </optgroup>
+                  <optgroup label="dresses">
+                    <option value="dress">Dress</option>
+                    <option value="strapless">Strapless</option>
+                    <option value="backless">Backless</option>
+                    <option value="blackdress">Little Black Dress</option>
+                  </optgroup>
+                  <optgroup label="other">
                     <option value="vest">Vest</option>
-                    <option value="overall">Overall</option>
+                    <option value="jumpsuit">Jumpsuit</option>
+                    <option value="romper">Romper</option>
                     <option value="other">Other</option>
+                  </optgroup>
               </select>
                 <label for="color">Pick the Color:
                 <color-picker class="color" ng-model="newItem.color"></color-picker>
