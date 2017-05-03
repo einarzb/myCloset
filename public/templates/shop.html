@@ -10,7 +10,7 @@
     <div class="row text-center">
         <div ng-repeat="item in closet track by $index">
           <div class="clearfix" ng-if="$index % 4 == 0"></div>
-            <div class="col-md-3 col-sm-6 item thumbnail">
+            <div class="col-md-3 col-sm-6 item thumbnailShop">
                 <!--buttons-->
                 <div class="pull-right">
                     <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
@@ -30,8 +30,8 @@
                     <strong>season: </strong> {{item.season}}
                     </p>
                     <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a>
-                        <a href="#" class="btn btn-default">Mix & Match</a>
+                        <a href="https://www.paypal.com" target=_blank  class="btn btn-primary">Buy Now!</a>
+                        <!-- <a href="#" class="btn btn-default">Mix & Match</a> -->
                     </p>
                 </div>
                 <!--edit inputs-->
