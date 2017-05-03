@@ -1,43 +1,31 @@
 app.controller('mainController', function($scope, factory, $state) {
-  //toggle view
+  //toggle form view
+  // this.formContainer = true; //hidden
+  this.thanks = false; //hidden
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
-  $scope.looks=[];
+$scope.looks=[];
+
   $scope.mixItem;
   //array of objects
   var types = {
     "leggings":"bottom",
-    "mini":"bottom",
-    "midi":"bottom",
-    "maxi":"bottom",
-    "asymmetrical":"bottom",
-    "pencil":"bottom",
-    "strapless":null,
-    "backless":null,
-    "blackdress":null,
-    "jumpsuit":null,
-    "romper":null,
-    "skinny":"bottom",
     "pants":"bottom",
     "tights":"bottom",
     "shorts":"bottom",
-    "blouses":"top",
-    "crop":"top",
-    "tank":"top",
-    "long":"top",
-    "short":"top",
-    "tunics":"top",
+    "top":"top",
     "spaghetti":"top",
     "sweater":"top",
     "jacket":"top",
     "coat":"top",
     "rainCoat":"top",
     "sportJacket":"top",
-    "dress": null,
+    "dress": "full",
     "skirt":"bottom",
     "vest":"top",
-    "other":null
+    "overall":"full",
+    "other":"full"
   };
 
 //mix and match
