@@ -15,7 +15,7 @@
                 <div class="pull-right">
                     <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
                     <button type="button" style="background-color:none;" ng-click="editItem(item._id)"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                    <button type="button" style="background-color:none;" ng-click="removeItem(item._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button type="button" style="background-color:none;" ng-click="removeItem(item._id,$index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </div>
                 <!--the real deal-->
                 <img ng-src="{{item.image}}" alt="" />

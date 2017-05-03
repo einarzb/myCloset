@@ -106,10 +106,12 @@ $scope.uploadFiles = function(){
 }
 
 //delete item
-    $scope.removeItem = function(id){
+    $scope.removeItem = function(id, index){
+      console.log(id);
       factory.removeItem(id)
       .then(function(response){
-        $scope.closet.splice(id, 1);
+        $scope.closet.splice(index, 1);
+        console.log($scope.closet);
         //console.log($scope.closet);
       })
       .catch(function(error){
