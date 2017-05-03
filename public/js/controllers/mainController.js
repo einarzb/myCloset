@@ -7,6 +7,25 @@ app.controller('mainController', function($scope, factory, $state) {
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
 
+  //array of objects
+  $scope.types = [{
+    "pants":"bottom",
+    "tights":"bottom",
+    "shorts":"bottom",
+    "top":"top",
+    "spaghetti":"top",
+    "sweater":"top",
+    "jacket":"top",
+    "coat":"top",
+    "rainCoat":"top",
+    "sportJacket":"top",
+    "dress":null,
+    "skirt":"bottom",
+    "vest":"top",
+    "overall":null,
+    "other":null
+  }]
+
 //sorting buttons should change the sort by index
   $scope.sortType = function (){
     alert("im not working yet");
@@ -82,6 +101,9 @@ $scope.uploadFiles = function(){
     }
 
     //top types:
-    
+    //top, vest, shirt
+
+    //bottom types:
+    //pants, tights, shorts, skirt
 
 });

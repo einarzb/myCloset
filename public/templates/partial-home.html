@@ -22,30 +22,30 @@
             <form class="form" name="addForm" ng-submit="addItem(newItem)">
                 <label> select type:
                 </label>
-                <select class="form-control" style="width:300px;" ng-model="newItem.type">
+                <select class="form-control" style="width:300px;" ng-model="newItem.types">
                   <optgroup label="pants">
-                    <option value="Pants">Pants</option>
-                    <option value="Tights">Tights</option>
-                    <option value="Shorts">Shorts</option>
+                    <option value="pants">Pants</option>
+                    <option value="tights">Tights</option>
+                    <option value="shorts">Shorts</option>
                   </optgroup>
                   <optgroup label="tops">
-                    <option value="Top">Top</option>
-                    <option value="Spaghetti Top">Spaghetti Top</option>
+                    <option value="top">Top</option>
+                    <option value="spaghetti">Spaghetti Top</option>
                   </optgroup>
                   <optgroup label="coats">
-                    <option value="Sweater">Sweater</option>
-                    <option value="Jacket">Jacket</option>
-                    <option value="Coat">Coat</option>
-                    <option value="Rain Coat">Rain Coat</option>
-                    <option value="Sport Jacket">Sport Jacket</option>
+                    <option value="sweater">Sweater</option>
+                    <option value="jacket">Jacket</option>
+                    <option value="coat">Coat</option>
+                    <option value="rainCoat">Rain Coat</option>
+                    <option value="sportJacket">Sport Jacket</option>
                   </optgroup>
                   <optgroup label="skirts">
-                    <option value="Dress">Dress</option>
-                    <option value="Skirt">Skirt</option>
+                    <option value="dress">Dress</option>
+                    <option value="skirt">Skirt</option>
                   </optgroup>
-                    <option value="Vest">Vest</option>
-                    <option value="Overall">Overall</option>
-                    <option value="Other">Other</option>
+                    <option value="vest">Vest</option>
+                    <option value="overall">Overall</option>
+                    <option value="other">Other</option>
               </select>
                 <label for="color">Pick the Color:
                 <color-picker class="color" ng-model="newItem.color"></color-picker>
