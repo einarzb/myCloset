@@ -6,9 +6,9 @@ app.controller('mainController', function($scope, factory, $state) {
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
-
+  $scope.mixItem;
   //array of objects
-  $scope.types = [{
+  var types = {
     "pants":"bottom",
     "tights":"bottom",
     "shorts":"bottom",
@@ -19,12 +19,43 @@ app.controller('mainController', function($scope, factory, $state) {
     "coat":"top",
     "rainCoat":"top",
     "sportJacket":"top",
-    "dress":null,
-    "skirt":"bottom",
-    "vest":"top",
+    "Dress": null,
+    "Skirt":"bottom",
+    "Vest":"top",
     "overall":null,
     "other":null
-  }]
+  };
+
+//mix and match
+$scope.mix = function (item){
+  $scope.mixItem = item;
+  console.log($scope.mixItem);
+  console.log($scope.mixItem.type);
+  console.log (types[item.type]);//bottom
+  console.log(item.type); //skirt
+
+  var matchItems =[];
+
+  $scope.isTop = types[item.type] == "top"
+  $scope.isBottom = types[item.type] == "bottom";
+  
+  if($scope.isTop){
+    matchItems = $scope.closet.filter(function(item){
+      return types[item.type] == "bottom";
+
+    });
+    console.log($scope.closet);
+    console.log(matchItems); //
+    console.log (item.type);
+    console.log("im top")
+
+  } else {
+    console.log("im bottom")
+  }
+  $scope.matchItems = matchItems;
+
+
+}
 
 //sorting buttons should change the sort by index
   $scope.sortType = function (){
