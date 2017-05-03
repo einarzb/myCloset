@@ -36,25 +36,27 @@ $scope.mix = function (item){
 
   var matchItems =[];
 
-  $scope.isTop = types[item.type] == "top"
-  $scope.isBottom = types[item.type] == "bottom";
-  
+  $scope.isTop = types[item.type] == "top";
+  console.log($scope.isTop);
+  //$scope.isBottom = types[item.type] == "bottom";
+
   if($scope.isTop){
     matchItems = $scope.closet.filter(function(item){
       return types[item.type] == "bottom";
+  });
 
-    });
-    console.log($scope.closet);
-    console.log(matchItems); //
-    console.log (item.type);
-    console.log("im top")
+    // console.log($scope.closet);
+    // console.log(matchItems); //
+    // console.log (item.type);
+    // console.log("im top")
 
   } else {
-    console.log("im bottom")
-  }
-  $scope.matchItems = matchItems;
-
-
+    console.log("im bottom");
+    matchItems = $scope.closet.filter(function(item){
+      return types[item.type] == "top";
+  });
+}
+    $scope.matchItems = matchItems;
 }
 
 //sorting buttons should change the sort by index
@@ -130,11 +132,5 @@ $scope.uploadFiles = function(){
     $scope.saveEdit = function(index){
       alert("save me");
     }
-
-    //top types:
-    //top, vest, shirt
-
-    //bottom types:
-    //pants, tights, shorts, skirt
 
 });

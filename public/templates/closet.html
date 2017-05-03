@@ -48,14 +48,19 @@
               <!--top-->
               <div class="top modal-body text-center">
                     <div class= "mixThumbnail text-center">
+                      <!--static top pic-->
                       <img ng-if="isTop" ng-src="{{mixItem.image}}" alt="" />
-                      <!-- <img ng-if="!isTop" ng-repeat="matchItem in matchItems" ng-src="{{matchItem.image}}" alt="" /> -->
+                      <!--top suggestions for static bottom -->
+                      <img ng-if="!isTop" ng-repeat="matchItem in matchItems" ng-src="{{matchItem.image}}" alt="" />
                     </div>
               </div>
               <hr>
               <!--bottom-->
               <div class="bottom modal-body text-center">
                     <div class= "mixThumbnail text-center">
+                      <!--static bottom pic-->
+                      <img ng-if="!isTop" ng-src="{{mixItem.image}}" alt="" />
+                      <!--bottom suggestions for static top -->
                       <img ng-if="isTop" ng-repeat="matchItem in matchItems" ng-src="{{matchItem.image}}" alt="" />
                     </div>
               </div>
