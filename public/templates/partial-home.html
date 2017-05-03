@@ -32,12 +32,12 @@
                     <option value="skinny">Skinny</option>
                   </optgroup>
                   <optgroup label="tops">
-                    <option value="blouses">Blouse</option>
+                    <option value="blouse">Blouse</option>
                     <option value="crop">Crop Top</option>
                     <option value="tank">Tank Top</option>
                     <option value="long">Long Sleeve</option>
                     <option value="short">Short Sleeve</option>
-                    <option value="tunics">Tunic</option>
+                    <option value="tunic">Tunic</option>
                   </optgroup>
                   <optgroup label="coats">
                     <option value="sweater">Sweater</option>
@@ -47,12 +47,11 @@
                     <option value="sportJacket">Sport Jacket</option>
                   </optgroup>
                   <optgroup label="skirts">
-                    <option value="skirt">Skirt</option>
-                    <option value="mini">Mini</option>
-                    <option value="midi">Midi</option>
-                    <option value="maxi">Maxi</option>
-                    <option value="pencil">Pencil</option>
-                    <option value="asymmetrical">Asymmetrical</option>
+                    <option value="mini">Mini Skirt</option>
+                    <option value="midi">Midi Skirt</option>
+                    <option value="maxi">Maxi Skirt</option>
+                    <option value="pencil">Pencil Skirt</option>
+                    <option value="asymmetrical">Asymmetrical Skirt</option>
                   </optgroup>
                   <optgroup label="dresses">
                     <option value="dress">Dress</option>
@@ -63,8 +62,8 @@
                   <optgroup label="other">
                     <option value="vest">Vest</option>
                     <option value="jumpsuit">Jumpsuit</option>
-                    <option value="romper">Romper</option>
-                    <option value="other">Other</option>
+                    <option value="romper" ng-if="newItem.type">Romper</option>
+                    <option value="other" ng-if="newItem.type">Other</option>
                   </optgroup>
               </select>
                 <label for="color">Pick the Color:

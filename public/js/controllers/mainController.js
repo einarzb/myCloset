@@ -5,43 +5,58 @@ app.controller('mainController', function($scope, factory, $state) {
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
-$scope.looks=[];
+  $scope.looks=[];
 
   $scope.mixItem;
   //array of objects
   var types = {
     "leggings":"bottom",
+    "mini":"bottom",
+    "midi":"bottom",
+    "maxi":"bottom",
+    "asymmetrical":"bottom",
+    "pencil":"bottom",
     "pants":"bottom",
     "tights":"bottom",
     "shorts":"bottom",
     "top":"top",
+    "blouse":"top",
+    "crop":"top",
+    "tank":"top",
+    "long":"top",
+    "short":"top",
+    "tunic":"top",
     "spaghetti":"top",
     "sweater":"top",
     "jacket":"top",
     "coat":"top",
     "rainCoat":"top",
     "sportJacket":"top",
-    "dress": "full",
-    "skirt":"bottom",
+    "dress": null,
     "vest":"top",
-    "overall":"full",
-    "other":"full"
+    "other":null,
+    "strapless":null,
+    "backless":null,
+    "blackdress":null,
+    "jumpsuit":"full"
   };
 
 //mix and match
-$scope.mix = function (item){
-  $scope.mixItem = item;
-  // console.log($scope.mixItem); //whole object
+$scope.mix = function (item){ //item is the object
+  $scope.mixItem = item; //mixItem is the object chosen
   // console.log($scope.mixItem.type);//top
   // console.log (types[item.type]);//top
   // console.log(item.type); //top/skirt/whatever
 
   var matchItems =[];
-  $scope.isTop = types[item.type] == "top";
+  $scope.isTop = types[item.type] === "top";
+  console.log($scope.isTop);
+  console.log(types); //types is an object
+  console.log(item.type); //type of the chosen object (skirt e.g)
 
   if($scope.isTop){
     matchItems = $scope.closet.filter(function(item){
-      return types[item.type] == "bottom";
+      return types[item.type] === "bottom";
   });
 
     // console.log($scope.closet);
@@ -52,10 +67,10 @@ $scope.mix = function (item){
   } else {
     console.log("im bottom");
     matchItems = $scope.closet.filter(function(item){
-      return types[item.type] == "top";
+      return types[item.type] === "top";
   });
 }
-    $scope.matchItems = matchItems;
+  $scope.matchItems = matchItems;
 }
 
 
@@ -76,7 +91,6 @@ $scope.addLook = function(newLook){
       console.log(error);
     })
     $state.go('look');
-
   };
 
 //sorting buttons should change the sort by index

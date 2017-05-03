@@ -20,11 +20,12 @@
                 <!--the real deal-->
                 <img ng-src="{{item.image}}" alt="" />
                 <div class="caption">
-                  <h4>{{item.type}} | {{item.brand}}</h4>
+                    <h4> {{item.type}} | {{item.brand}}</h4>
                     <span class="text-left"><strong>season: </strong> {{item.season}}</span> <br>
                     <div class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
                       &nbsp;&nbsp;&nbsp;
                     </div>
+                    <!-- ng-if="newItem.type" -->
                         <button type="button" data-toggle="modal" data-target="#mix" class="btn btn-default" ng-click="mix(item)">Mix & Match</button>
                 </div>
                 <!--edit inputs-->
