@@ -25,7 +25,40 @@
                     <div class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
                       &nbsp;&nbsp;&nbsp;
                     </div>
-                        <a href="#" class="btn btn-default">Mix & Match</a>
+                        <button type="button" data-toggle="modal" data-target="#mix" class="btn btn-default">Mix & Match</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="mix" role="dialog">
+                          <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Mix & Match</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div ng-repeat="item in closet track by $index">
+                                    <div class="thumbnail text-center">
+                                      <img ng-src="{{item.image}}" alt="" />
+                                      <div class="caption">
+                                        <h4>{{item.type}} | {{item.brand}}</h4>
+                                          <span class="text-left"><strong>season: </strong> {{item.season}}</span> <br>
+                                          <div class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
+                                            &nbsp;&nbsp;&nbsp;
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- <p>Some text in the modal.</p> -->
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
                 </div>
                 <!--edit inputs-->
                 <div class="editItems" ng-show="editMode">
