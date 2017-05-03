@@ -16,7 +16,7 @@ app.controller('mainController', function($scope, factory, $state) {
     "spaghetti":"top",
     "sweater":"top",
     "jacket":"top",
-    "coat":"top",
+    "Coat":"top",
     "rainCoat":"top",
     "sportJacket":"top",
     "Dress": null,
