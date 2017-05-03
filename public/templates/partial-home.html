@@ -20,9 +20,10 @@
             <img class="hanger" src="images/hanger.png" />
             <h4><em>INDEX YOUR CLOSET</em></h4>
             <form class="form" name="addForm" ng-submit="addItem(newItem)">
+
                 <label> select type:
                 </label>
-                <select class="form-control" style="width:300px;" ng-model="newItem.type">
+                <select class="form-control" style="width:300px;" required ng-model="newItem.type">
                   <optgroup label="pants">
                     <option value="pants">Pants</option>
                     <option value="tights">Tights</option>
@@ -52,11 +53,11 @@
               </label> <br>
               <div class="brand">
                   <label for="brand">brand </label>
-                  <input type="text" class="brand form-control" placeholder="brand" ng-model="newItem.brand">
+                  <input type="text" required class="brand form-control" placeholder="brand" ng-model="newItem.brand">
              </div><br>
              <label for="season">season
                <div class="btn-toolbar" role="toolbar">
-                   <div class="btn-group season" role="group" ng-selected="newItem.season" ng-model="selected">
+                   <div class="btn-group season" role="group" ng-selected="newItem.season" ng-model="selected" required>
                        <button class="btn btn-default btn-sm" ng-click="newItem.season = 'summer'" type="button" ><i class="fa fa-sun-o" aria-hidden="true"></i></button>
                        <button class="btn btn-default btn-sm" ng-click="newItem.season = 'winter'" type="button"><i class="fa fa-umbrella" aria-hidden="true"></i></button>
                        <button class="btn btn-default btn-sm" ng-click="newItem.season = 'fall'" type="button" ><i class="fa fa-leaf" aria-hidden="true"></i></button>
@@ -68,17 +69,16 @@
             <label for="image">upload image:
               <!-- <button type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="5MB">
             Upload File</button> -->
-              <input type="text" class="form-control" name="image" ng-model="newItem.image">
+              <input type="text" class="form-control" name="image" ng-model="newItem.image" required>
             </label><br>
 
-            <button type="submit" name="button" class="btn btn-info">Submit</button> <br> <br>
-            <button type="button" class="btn btn-link btn-sm pricetag" ng-show="!sellForm" ng-click="sellFormBtn()">list your item</button>
-        </form>
-        <br>
-        <form class="form" name="saleForm" ng-submit="sellItem(newItem)" ng-show="sellForm">
+            <!-- <button type="submit" name="button" class="btn btn-info">Submit</button> <br> <br> -->
+            <!-- <button type="button" class="btn btn-link btn-sm pricetag" ng-show="!sellForm" ng-click="sellFormBtn()">list your item</button> -->
+        <!-- </form> -->
+        <!-- <form class="form" name="saleForm" ng-submit="sellItem(newItem)" ng-show="sellForm"> -->
           <label for="size">Pick the size:
               <div class="btn-toolbar" role="toolbar">
-                  <div class="btn-group" role="group" ng-selected="newItem.size" ng-model="selected">
+                  <div class="btn-group" role="group" ng-selected="newItem.size" ng-model="selected" required>
                       <button class="btn btn-default btn-sm" ng-click="newItem.size = 'xs'" type="button" >XS</button>
                       <button class="btn btn-default btn-sm" ng-click="newItem.size = 's'" type="button">S</button>
                       <button class="btn btn-default btn-sm" ng-click="newItem.size = 'md'" type="button" >MD</button>
@@ -90,10 +90,10 @@
             <br>
             <div class="price">
                 <label for="price">price </label>
-                <input type="number" min="0" class="price form-control" placeholder="price" ng-model="newItem.price">
+                <input type="number" min="0" class="price form-control" placeholder="price" ng-model="newItem.price" required>
             </div>
             <label for="fabric">fabric
-              <select class="form-control" ng-selected="selected" ng-model="newItem.fabric">
+              <select class="form-control" ng-selected="selected" ng-model="newItem.fabric" required>
                 <option>Chiffon</option>
                 <option>Corduroy</option>
                 <option>Cotton</option>
@@ -112,14 +112,15 @@
               </select>
             </label>
             <label for="condition">condition
-               <select class="form-control" ng-selected="selected" ng-model="newItem.condition">
+              <input type="text" class="form-control" placeholder="Describe condition" ng-model="newItem.condition" required>
+               <!-- <select class="form-control" ng-selected="selected" ng-model="newItem.condition">
                  <option>New with tags!</option>
                  <option>Never been worn</option>
                  <option>Old but loveable</option>
                  <option>Vintage</option>
                  <option>Should go to donation</option>
                  <option>Other</option>
-               </select>
+               </select> -->
             </label><br>
             <button type="submit" name="button" class="btn btn-info">Submit</button>
         </form>
