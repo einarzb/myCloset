@@ -6,7 +6,8 @@ app.controller('mainController', function($scope, factory, $state) {
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
   $scope.looks=[];
-
+  $scope.base;
+  $scope.top;
   $scope.mixItem;
 
   //array of objects
@@ -75,7 +76,16 @@ $scope.mix = function (item){ //item is the object
   $scope.matchItems = matchItems;
 }
 
-
+//getting looks from db
+// $scope.getLooks = factory.getLooks;
+//
+// $scope.getLooks()
+// .then(function(response){
+//   $scope.looks = response; //the items are populating the array
+// })
+// .catch(function(error){
+//   console.log(error);
+// })
 
 //adidng look
 $scope.addLook = function(newLook){
@@ -87,14 +97,19 @@ $scope.addLook = function(newLook){
       // console.log(base);
     factory.addLook(newLook)
     .then(function(response){
-      console.log("hello add look");
-      $scope.looks.push(newLook);
+      // $scope.top = newLook.top;
+      // $scope.base = newLook.base;
+      // console.log(newLook.base);
+      $scope.looks.push(response);
       console.log($scope.looks);
+      $state.go('look');
+      // console.log($scope.looks[0].base);
+      // console.log($scope.base);
+      // console.log($scope.top);
     })
     .catch(function(error){
       console.log(error);
     })
-    $state.go('look');
   };
 
 //sorting buttons should change the sort by index

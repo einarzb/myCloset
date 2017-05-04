@@ -9,8 +9,8 @@ app.factory('factory', function($http){
   function addLook (newLook){
     console.log("im in factoryryryryr");
     return $http.post('/look', newLook).then(function(response){
-      return response.data; //happens later on the future
       console.log(response.data);
+      return response.data; //happens later on the future
     });
   };
 
@@ -20,6 +20,13 @@ app.factory('factory', function($http){
       return response.data;
     });
   };
+
+  //function get looks populated in mongoose to the ctrler
+    function getLooks(){
+      return $http.get('/looks').then(function(response){
+        return response.data;
+      });
+    };
 
   function removeItem(id){
     return $http.delete('/closetdb/' + id).then(function(response){

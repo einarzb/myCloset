@@ -36,9 +36,24 @@ app.post('/look', function(req, res, next) {
       console.error(err)
       return next(err);
     } else {
+      console.log("look server, item saved");
+      console.log("item", item);
       res.send(item);
     }
   });
+});
+
+//populating looks from db
+app.get('/looks', function (req, res, next) {
+    look.find(function (error, looks) { //beers is db name
+          if (error) {
+            console.error(error)
+            return next(error); //express next function. middleware
+          } else {
+            res.send(looks);
+            // console.log(cloestdb);
+          }
+     });
 });
 
 
@@ -50,7 +65,7 @@ app.get('/closetdb', function (req, res, next) {
             return next(error); //express next function. middleware
           } else {
             res.send(cloestdb);
-            console.log(cloestdb);
+            // console.log(cloestdb);
           }
      });
 });
