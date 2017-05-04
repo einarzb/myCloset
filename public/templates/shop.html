@@ -12,18 +12,18 @@
             <div class="col-md-3 col-sm-6 item thumbnailShop">
                 <!--buttons-->
                 <div class="pull-right">
-                    <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-                    <button type="button" style="background-color:none;" ng-click="editItem(item._id)"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                    <!-- <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button> -->
+                    <!-- <button type="button" style="background-color:none;" ng-click="editItem(item._id)"><i class="fa fa-edit" aria-hidden="true"></i></button> -->
                     <button type="button" style="background-color:none;" ng-click="removeItem(item._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </div>
                 <!--the real deal-->
                 <img ng-src="{{item.image}}" alt="" />
                 <div class="caption">
                     <h4>{{item.type}} | {{item.brand}}</h4>
-                    <h4><span class="pricetag">{{item.price | currency}}</span> | &nbsp;<span class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
-                    &nbsp;&nbsp;&nbsp;</span> |  &nbsp; <span style="font-size:1.2em">{{item.size}} </span>  &nbsp;</h4>
+                    <h4><span class="pricetag">{{item.price | currency}}</span> | &nbsp;
+                    <span class="swatch" style="background-color:{{item.color}};border:1px solid black;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; | &nbsp; <span style="font-size:1.2em">{{item.size}} </span> &nbsp;</h4>
                     <p class="text-left">
-                       <br>
                         <strong>fabric:</strong> {{item.fabric}}<br>
                         <strong>condition:<strong> {{item.condition}} <br>
                     <strong>season: </strong> {{item.season}}

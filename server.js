@@ -56,7 +56,7 @@ app.get('/looks', function (req, res, next) {
      });
 });
 
-//removing item from db
+//removing look from db
 app.delete('/looks/:id', function (req, res, next) {
     Look.remove({_id: req.params.id},function (err) {
           if (err) {

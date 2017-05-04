@@ -14,18 +14,17 @@
                 <!--buttons-->
                 <div class="pull-right">
                     <button type="button" style="background-color:none;" ng-click="calendarItem($index)"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-                    <button type="button" style="background-color:none;" ng-click="editItem(item._id)"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                    <!-- <button type="button" style="background-color:none;" ng-click="editItem(item._id)"><i class="fa fa-edit" aria-hidden="true"></i></button> -->
                     <button type="button" style="background-color:none;" ng-click="removeItem(item._id,$index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>
+                <div class="pull-left swatch" style="background-color:{{item.color}};border:1px solid black;height:22px;width:23px;">
+                  &nbsp;&nbsp;&nbsp;
                 </div>
                 <!--the real deal-->
                 <img ng-src="{{item.image}}" alt="" />
                 <div class="caption">
                     <h4> {{item.type}} | {{item.brand}}</h4>
                     <span class="text-left"><strong>season: </strong> {{item.season}}</span> <br>
-                    <div class="swatch" style="background-color:{{item.color}};border:1px solid black;height:25px;width:25px;">
-                      &nbsp;&nbsp;&nbsp;
-                    </div>
-                    <!-- ng-if="newItem.type" -->
                         <button type="button" data-toggle="modal" data-target="#mix" class="btn btn-default" ng-click="mix(item)">Mix & Match</button>
                 </div>
                 <!--edit inputs-->
