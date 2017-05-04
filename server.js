@@ -30,7 +30,7 @@ app.post('/closetdb', function(req, res, next) {
 });
 
 //adding looks
-app.post('/look', function(req, res, next) {
+app.post('/looks', function(req, res, next) {
   Look.create(req.body, function(err, item) {
     if (err) {
       console.error(err)
@@ -56,6 +56,17 @@ app.get('/looks', function (req, res, next) {
      });
 });
 
+//removing item from db
+app.delete('/looks/:id', function (req, res, next) {
+    Look.remove({_id: req.params.id},function (err) {
+          if (err) {
+            console.error(err)
+            return next(err); //express next function. middleware
+          } else {
+            res.send("look is gone");
+          }
+     });
+});
 
 //populating items from db
 app.get('/closetdb', function (req, res, next) {

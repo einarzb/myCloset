@@ -1,13 +1,11 @@
 app.controller('mainController', function($scope, factory, $state) {
   //toggle form view
-  // this.formContainer = true; //hidden
-  this.thanks = false; //hidden
   this.editMode = false; //hidden
   //an empty array to store 'items' and ng repeat them in html
   $scope.closet=[];
+  //an empty array to store 'looks' and ng repeat them in html
   $scope.looks=[];
-  $scope.base;
-  $scope.top;
+  //the chosem item that we wanna match clothes too
   $scope.mixItem;
 
   //array of objects
@@ -46,26 +44,18 @@ app.controller('mainController', function($scope, factory, $state) {
 //mix and match
 $scope.mix = function (item){ //item is the object
   $scope.mixItem = item; //mixItem is the object chosen
-  // console.log($scope.mixItem.type);//top
-  // console.log (types[item.type]);//top
-  // console.log(item.type); //top/skirt/whatever
-
   var matchItems =[];
+
   $scope.isTop = types[item.type] === "top";
-  console.log($scope.isTop);
-  console.log(types); //types is an object
-  console.log(item.type); //type of the chosen object (skirt e.g)
+  // console.log($scope.isTop);
+  // console.log(types); //types is an object
+  // console.log(item.type); //type of the chosen object (skirt e.g)
 
   if($scope.isTop){
     matchItems = $scope.closet.filter(function(item){
       return types[item.type] === "bottom";
           });
-
-    // console.log($scope.closet);
-    // console.log(matchItems);
-    // console.log (item.type);
-    // console.log("im top")
-  } else if(types[item.type] == null) {
+  }else if(types[item.type] == null) {
       console.log("im full body");
   } else {
     console.log("im bottom");
@@ -76,25 +66,16 @@ $scope.mix = function (item){ //item is the object
   $scope.matchItems = matchItems;
 }
 
-//adidng look
+//adding look
 $scope.addLook = function(newLook){
       var top = $scope.matchItems[0].image; //suggestions
       var base = $scope.mixItem.image; // chosen item to match
       var newLook = {top:top, base:base}; //an object
-      // console.log(newLook);
-      // console.log(top);
-      // console.log(base);
     factory.addLook(newLook)
     .then(function(response){
-      // $scope.top = newLook.top;
-      // $scope.base = newLook.base;
-      // console.log(newLook.base);
       $scope.looks.push(response);
       console.log($scope.looks);
       $state.go('look');
-      // console.log($scope.looks[0].base);
-      // console.log($scope.base);
-      // console.log($scope.top);
     })
     .catch(function(error){
       console.log(error);
@@ -125,9 +106,7 @@ $scope.addLook = function(newLook){
 
   $scope.getLooks()
   .then(function(response){
-    console.log(response);
     $scope.looks = response; //the items are populating the array
-    console.log(looks);
   })
   .catch(function(error){
     console.log(error);
@@ -154,17 +133,30 @@ $scope.uploadFiles = function(){
 
 //delete item
     $scope.removeItem = function(id, index){
-      console.log(id);
       factory.removeItem(id)
       .then(function(response){
         $scope.closet.splice(index, 1);
-        console.log($scope.closet);
-        //console.log($scope.closet);
       })
       .catch(function(error){
         console.log(error);
       })
     };
+
+
+
+//delete look
+    $scope.removeLook = function(id, index){
+      console.log(id);
+      console.log(index);
+      factory.removeLook(id)
+      .then(function(response){
+        $scope.looks.splice(index, 1);
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+    };
+
 
 //edit item
     $scope.editItem = function(id){
