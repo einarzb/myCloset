@@ -17,6 +17,8 @@ body {
   height: 450px;
   width:280px;
   margin-left: 12px;
+  margin-bottom: 10px;
+
 }
 
 .thumbnail img {
@@ -36,6 +38,7 @@ body {
   height: 520px;
   width:280px;
   margin-left: 12px;
+  margin-bottom: 10px;
 }
 .thumbnailShop img {
   min-height:250px;
@@ -46,6 +49,23 @@ body {
   margin-top:30px;
 }
 
+/*look part*/
+.thumbnailLook {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 540px;
+  width:280px;
+  margin-left: 12px;
+}
+
+.thumbnailLook img {
+  /*border:2px solid red;*/
+  min-height:230px;
+  height:250px;
+  width:240px;
+  margin-bottom: -15px;
+  margin-top:10px;
+}
 
 
 .top, .bottom {

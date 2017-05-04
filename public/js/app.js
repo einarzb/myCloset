@@ -37,5 +37,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller:'authController',
       templateUrl: '/templates/login.html'
   })
-
+  .state('about', {
+      url: '/about',
+      controller:'mainController',
+      templateUrl: '/templates/about.html'
+  })
 });
