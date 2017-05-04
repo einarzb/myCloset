@@ -131,6 +131,9 @@ $scope.uploadFiles = function(){
   alert("upload moi");
 }
 
+$scope.calendarItem = function(){
+  alert("im on progress too - pleases visit again")
+}
 //delete item
     $scope.removeItem = function(id, index){
       factory.removeItem(id)
