@@ -76,17 +76,6 @@ $scope.mix = function (item){ //item is the object
   $scope.matchItems = matchItems;
 }
 
-//getting looks from db
-// $scope.getLooks = factory.getLooks;
-//
-// $scope.getLooks()
-// .then(function(response){
-//   $scope.looks = response; //the items are populating the array
-// })
-// .catch(function(error){
-//   console.log(error);
-// })
-
 //adidng look
 $scope.addLook = function(newLook){
       var top = $scope.matchItems[0].image; //suggestions
@@ -131,12 +120,26 @@ $scope.addLook = function(newLook){
     console.log(error);
   })
 
+//getting looks from db
+  $scope.getLooks = factory.getLooks;
+
+  $scope.getLooks()
+  .then(function(response){
+    console.log(response);
+    $scope.looks = response; //the items are populating the array
+    console.log(looks);
+  })
+  .catch(function(error){
+    console.log(error);
+  })
+
+
 //adds submitted item onto closet array and send it to DB
   $scope.addItem = function(newItem){
        factory.addItem(newItem)
       .then(function(response){
         //console.log('response', response);
-        $scope.closet.push(newItem);
+        $scope.closet.push(response);
         $state.go('closet');
         //console.log($scope.closet);
       })

@@ -41,6 +41,6 @@ app.factory('factory', function($http){
      return response.data;
     });
 };
-  return {addItem:addItem, addLook:addLook, getItems:getItems, removeItem:removeItem, editItem:editItem}
+  return {addItem:addItem, addLook:addLook, getItems:getItems, getLooks:getLooks, removeItem:removeItem, editItem:editItem}
 
 });
