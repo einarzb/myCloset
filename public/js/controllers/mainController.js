@@ -55,7 +55,7 @@ $scope.mix = function (item){ //item is the object
     matchItems = $scope.closet.filter(function(item){
       return types[item.type] === "bottom";
           });
-  }else if(types[item.type] == null) {
+  } else if (types[item.type] === null) {
       console.log("im full body");
   } else {
     console.log("im bottom");
@@ -141,8 +141,6 @@ $scope.uploadFiles = function(){
         console.log(error);
       })
     };
-
-
 
 //delete look
     $scope.removeLook = function(id, index){
