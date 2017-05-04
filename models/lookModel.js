@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var lookSchema = new Schema ({
 	top: String,
-	bottom: String,
+	base: String,
 });
 
 var Look = mongoose.model('Look', lookSchema);

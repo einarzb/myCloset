@@ -8,7 +8,7 @@ app.factory('factory', function($http){
 //function add looks
   function addLook (newLook){
     console.log("im in factoryryryryr");
-    return $http.post('/closetdb', newLook).then(function(response){
+    return $http.post('/look', newLook).then(function(response){
       return response.data; //happens later on the future
       console.log(response.data);
     });
@@ -34,6 +34,6 @@ app.factory('factory', function($http){
      return response.data;
     });
 };
-  return {addItem:addItem, getItems:getItems, removeItem:removeItem, editItem:editItem}
+  return {addItem:addItem, addLook:addLook, getItems:getItems, removeItem:removeItem, editItem:editItem}
 
 });

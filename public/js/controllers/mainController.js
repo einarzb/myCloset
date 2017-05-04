@@ -8,9 +8,10 @@ app.controller('mainController', function($scope, factory, $state) {
   $scope.looks=[];
 
   $scope.mixItem;
+
   //array of objects
   var types = {
-    "leggings":"bottom",
+    "leggings": "bottom",
     "mini":"bottom",
     "midi":"bottom",
     "maxi":"bottom",
@@ -38,7 +39,7 @@ app.controller('mainController', function($scope, factory, $state) {
     "strapless":null,
     "backless":null,
     "blackdress":null,
-    "jumpsuit":"full"
+    "jumpsuit": null
   };
 
 //mix and match
@@ -57,13 +58,14 @@ $scope.mix = function (item){ //item is the object
   if($scope.isTop){
     matchItems = $scope.closet.filter(function(item){
       return types[item.type] === "bottom";
-  });
+          });
 
     // console.log($scope.closet);
     // console.log(matchItems);
     // console.log (item.type);
     // console.log("im top")
-
+  } else if(types[item.type] == null) {
+      console.log("im full body");
   } else {
     console.log("im bottom");
     matchItems = $scope.closet.filter(function(item){
@@ -77,15 +79,17 @@ $scope.mix = function (item){ //item is the object
 
 //adidng look
 $scope.addLook = function(newLook){
-      var top = $scope.matchItems[0].image;
-      var base = $scope.mixItem.image;
-      var newLook = [top, base];
-      console.log(newLook);
-      console.log(top);
-      console.log(base);
+      var top = $scope.matchItems[0].image; //suggestions
+      var base = $scope.mixItem.image; // chosen item to match
+      var newLook = {top:top, base:base}; //an object
+      // console.log(newLook);
+      // console.log(top);
+      // console.log(base);
     factory.addLook(newLook)
     .then(function(response){
+      console.log("hello add look");
       $scope.looks.push(newLook);
+      console.log($scope.looks);
     })
     .catch(function(error){
       console.log(error);

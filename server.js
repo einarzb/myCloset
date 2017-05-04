@@ -30,7 +30,7 @@ app.post('/closetdb', function(req, res, next) {
 });
 
 //adding looks
-app.post('/closetdb', function(req, res, next) {
+app.post('/look', function(req, res, next) {
   Look.create(req.body, function(err, item) {
     if (err) {
       console.error(err)
