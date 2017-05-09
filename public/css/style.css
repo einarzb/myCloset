@@ -7,10 +7,30 @@ h1 {
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
 }
+
+input[type=text], input[type=number]{padding:2px;}
+.color{padding-bottom: 12px;margin-top:3px}
+
+.form-control select  {
+    outline: 0;
+    overflow: hidden;
+    height: 30px;
+    background: #2c343c;
+    color: #747a80;
+    border: #2c343c;
+    padding: 5px 3px 5px 10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 10px;
+}
+
+.holder{width: 500px; height: 70px;display:inline-flex;}
+
 .brandPrice{display: inline;}
 .brand{width:200px;}
-.price{width:90px;}
-.season {font-size: 5em;}
+.price{width:90px;padding-right: 5px;margin-top: -3px;margin-left: 1px;height: 35px;}
+
+.season {font-size: 5em;padding-bottom: 11px;}
 .thanks{margin-top:200px;}
 .jumbotron {
     margin-top: 50px;
