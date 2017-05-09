@@ -127,9 +127,9 @@ $scope.addLook = function(newLook){
       })
     };
 
-$scope.uploadFiles = function(){
-  alert("upload moi");
-}
+// $scope.uploadFiles = function(){
+//   alert("upload moi");
+// }
 
 $scope.calendarItem = function(){
   alert("im on progress too - pleases visit again")

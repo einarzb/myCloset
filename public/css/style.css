@@ -11,19 +11,6 @@ h1 {
 input[type=text], input[type=number]{padding:2px;}
 .color{padding-bottom: 12px;margin-top:3px}
 
-.form-control select  {
-    outline: 0;
-    overflow: hidden;
-    height: 30px;
-    background: #2c343c;
-    color: #747a80;
-    border: #2c343c;
-    padding: 5px 3px 5px 10px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 10px;
-}
-
 .holder{width: 500px; height: 70px;display:inline-flex;}
 
 .brandPrice{display: inline;}

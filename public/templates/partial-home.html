@@ -73,7 +73,7 @@
               </label> <br>
               <div class="brand">
                   <label for="brand">Brand </label>
-                  <input type="text" required class="brand form-control" placeholder="type in brand" ng-model="newItem.brand">
+                  <input type="text" style="margin-bottom:10px;" required class="brand form-control" placeholder="type in brand" ng-model="newItem.brand">
              </div>
              <label for="season">Season
                <div class="btn-toolbar" role="toolbar">
@@ -90,7 +90,7 @@
               <input type="text" class="form-control" style="padding-bottom: 11px;" name="image" ng-model="newItem.image" required>
             </label><br>
 
-          <label for="size">*Pick the Size
+          <label for="size">* Pick the Size
               <div class="btn-toolbar" style="padding-bottom: 11px;" role="toolbar">
                   <div class="btn-group" role="group" ng-selected="newItem.size" ng-model="selected">
                       <button class="btn btn-default btn-sm" ng-click="newItem.size = 'xs'" type="button" >XS</button>
