@@ -33,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller:'mainController',
       templateUrl: '/templates/about.html'
   })
-  
+
   //auth states
   .state('register', {
     url: '/register',
