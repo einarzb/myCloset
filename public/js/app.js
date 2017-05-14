@@ -1,4 +1,4 @@
-var app = angular.module('closetApp', ['ui.router','color.picker']);
+var app = angular.module('closetApp', ['ui.router','color.picker', 'ngMessages']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('home');
@@ -33,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller:'mainController',
       templateUrl: '/templates/about.html'
   })
-  
+
   //auth states
   .state('register', {
     url: '/register',
