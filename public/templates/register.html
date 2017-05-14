@@ -1,4 +1,81 @@
-<h1>sign me</h1>
-<div ui-view>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-push-3">
+    <form name="registerForm" class="text-center" ng-submit="register()">
+      <div class="row well">
+        <div class="col-md-12">
+              <h2>register</h2>
 
+              <div class="row">
+                <div class="col-md-3 col-md-push-1" style="font-size:1.7em;margin-top:5px;">
+                    <i class="fa fa-user " aria-hidden="true"></i>
+                </div>
+                    <div class="col-md-6">
+                      <input type="text " name="username" placeholder="user name" ng-model="user.username" ng-minlength="2" class="form-control" required/>
+                    </div>
+              </div>
+              <div class="row">
+                    <div class="col-md-6 col-md-push-2" ng-messages="registerForm.username.$error" style="color:maroon;margin-left:20px;" role="alert">
+                        <div ng-message="required"> please fill in name </div>
+                        <div ng-message="minlength"> your name is too short </div>
+                    </div>
+             </div>
+              <div class="row">
+                <div class="col-md-3 col-md-push-1" style="font-size:1.7em;margin-top:5px;">
+                          <i class="fa fa-lock " aria-hidden="true"></i>
+                      </div>
+                      <div class="col-md-6">
+                          <input type="password" placeholder="password" name="password" ng-pattern="/^(?=.*[a-z])(?=.*\d)(?=.*[A-Z]).{6,16}$/"
+ ng-model="user.password" class="form-control" required/>
+                      </div>
+              </div>
+              <div class="row">
+                      <div class="col-md-6 col-md-push-2" ng-messages="registerForm.password.$error" style="color:maroon;padding-left:80px;" role="alert">
+                          <div ng-message="required"> please fill in password </div>
+                          <div ng-message="pattern">Password must include 6 characters including 1 uppercase letter and number</div>
+                      </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-md-push-1" style="font-size:1.7em;margin-top:5px;">
+                    <i class="fa fa-repeat " aria-hidden="true"></i>
+                </div>
+                <div class="col-md-6">
+                        <input type="password" placeholder="repeat password" name="passwordConfirm" ng-pattern="{{user.password}}" ng-model="user.passwordConfirm" class="form-control" required/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-md-push-2" ng-messages="registerForm.passwordConfirm.$error" style="color:maroon;padding-left:80px;" role="alert">
+                    <div ng-message="required"> please fill in password </div>
+                    <div ng-message="pattern"> passwords must match</div>
+                </div>
+              </div>
+
+                <hr>
+                  <button type="submit" class="btn btn-success btn-sm login"  style="font-size:1.2em;background-color:pink;border:none;width:160px;"/>submit</button>
+      </div>
+    </div>
+
+        <!--SOCIAL-->
+        <!-- <div class="row">
+            <div class="well text-center col-md-12" style="height:200px;">
+              <h3>or login with social</h3>
+              <hr>
+                  <div class="col-md-3 col-md-push-1">
+                    <button type="button" style="background-color:transparent;border:none ">
+                          <a ui-sref="/auth/facebook">
+                              <img src="images/login-fb.png "/>
+                          </a>
+                    </button>
+                  </div>
+                  <div class="col-md-9 col-md-push-1">
+                        <button type="button" style="background-color:transparent;border:none">
+                              <img src="images/google.png "/>
+                        </button>
+                  </div>
+           </div>
+     </div> -->
+</form>
+
+    </div>
+  </div>
 </div>

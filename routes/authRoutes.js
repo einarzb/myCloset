@@ -58,7 +58,7 @@ router.post('/register', function(req, res, next) {
       res.send(req.user.username);
       console.log(req.user.username, "im in authroutes");
     } else {
-      res.send(null)
+      res.send(req.user.username)
     }
   });
 

@@ -6,7 +6,7 @@ app.controller('authController', function($scope, $state, authFactory) {
       authFactory.register($scope.user)
       //if success - redirect to success page
       .then(function(){
-        $state.go('success');
+        $state.go('home');
         //console.log($scope.user._id); cant get id
       //display error (mpl supply error's data)
       }, function(err){
@@ -19,7 +19,7 @@ app.controller('authController', function($scope, $state, authFactory) {
       authFactory.login($scope.user)
       //using promise we can wait for a successful registration before we re-reroute the user.
       .then(function(){
-        $state.go('success');
+        $state.go('home');
       //display error
       }, function(err){
         alert(err.data); //different error is thrown by passport-authenticate
