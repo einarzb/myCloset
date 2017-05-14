@@ -27,19 +27,30 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller:'mainController',
       templateUrl: '/templates/look.html'
   })
-  .state('signup', {
-      url: '/signup',
-      controller:'authController',
-      templateUrl: '/templates/signup.html'
-  })
-  .state('login', {
-      url: '/login',
-      controller:'authController',
-      templateUrl: '/templates/login.html'
-  })
+
   .state('about', {
       url: '/about',
       controller:'mainController',
       templateUrl: '/templates/about.html'
   })
+  
+  //auth states
+  .state('register', {
+    url: '/register',
+    templateUrl: '/templates/register.html',
+    controller: 'authController'
+  })
+
+  .state('login', {
+  url: '/login',
+  templateUrl: '/templates/login.html',
+  controller: 'authController'
+  })
+
+  .state('logout', {
+    url: '/logout',
+    templateUrl: '/templates/logout.html',
+    controller: 'authController'
+  })
+
 });
