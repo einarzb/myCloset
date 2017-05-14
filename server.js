@@ -1,21 +1,50 @@
 //require express dependancy for node work
-var express = require('express');
-var app = express();
+const express = require('express');
+const expressSession = require('express-session'); //enable sessions
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;//most common & traditional strategy to authenticates a person using username & password.
+const mongoose = require('mongoose');
 
-//require mongoose dependancy
-var mongoose = require('mongoose');
-mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/closetdb");
-var Item = require("./models/ItemModel.js");
-var Look = require("./models/lookModel.js");
+//routing requirements
+const authRoutes = require('./routes/authRoutes');
+
+//mongoose models
+const User = require('./models/userModel');
+const Item = require("./models/ItemModel.js");
+const Look = require("./models/lookModel.js");
+
+const app = express();
+mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/closetdb", function(err){
+  if (err) throw err;
+});
 
 //body parser middleware
-var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //setup directories for server access
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
+
+app.use(expressSession({
+  secret:"thisIsAClosetSecret",
+  resave: false,
+  saveUninitialized: false
+}));
+
+// initializes passport and tells Express we want to use it as middleware
+app.use(passport.initialize());
+//makes sure our app is using passport's-session middleware!
+app.use(passport.session());
+
+// Configure passport-local to use User Model for authentication
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//serve routings
+app.use('/users', authRoutes);
 
 //adding items
 app.post('/closetdb', function(req, res, next) {
