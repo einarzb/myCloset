@@ -46,6 +46,15 @@ passport.deserializeUser(User.deserializeUser());
 //serve routings
 app.use('/users', authRoutes);
 
+//ensure authenticated user to remove and edit items
+var ensureAuthenticated = function(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    return res.send(401, { message: "Unauthorized" });
+  }
+};
+
 //adding items
 app.post('/closetdb', function(req, res, next) {
   Item.create(req.body, function(err, item) {
@@ -86,7 +95,7 @@ app.get('/looks', function (req, res, next) {
 });
 
 //removing look from db
-app.delete('/looks/:id', function (req, res, next) {
+app.delete('/looks/:id', ensureAuthenticated, function (req, res, next) {
     Look.remove({_id: req.params.id},function (err) {
           if (err) {
             console.error(err)
@@ -111,7 +120,7 @@ app.get('/closetdb', function (req, res, next) {
 });
 
 //removing item from db
-app.delete('/closetdb/:id', function (req, res, next) {
+app.delete('/closetdb/:id', ensureAuthenticated, function (req, res, next) {
     Item.remove({_id: req.params.id},function (err) {
           if (err) {
             console.error(err)
@@ -123,7 +132,7 @@ app.delete('/closetdb/:id', function (req, res, next) {
 });
 
 //update
-app.put('/closetdb/:id', function(req, res, next){
+app.put('/closetdb/:id', ensureAuthenticated, function(req, res, next){
   //item before change
   Item.find({_id: req.params.id}).exec(function(err, item){
   });
