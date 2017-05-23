@@ -46,7 +46,7 @@ passport.deserializeUser(User.deserializeUser());
 //serve routings
 app.use('/users', authRoutes);
 
-//ensure authenticated user to remove and edit items
+//ensures only authenticated users can remove and edit items
 var ensureAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) {
     return next();

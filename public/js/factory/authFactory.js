@@ -28,8 +28,6 @@ app.factory('authFactory', function($http) {
         console.log(response.data);
         auth.currentUser.username = angular.copy(response.data.username);
         console.log(auth.currentUser); //loggedin username
-        console.log(auth.currentUser._id); //
-
     });
   };
 
