@@ -43,6 +43,11 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//fb
+// 1516334005106819
+//key d241fda558607529e7221d1c512466c9
+
+
 //serve routings
 app.use('/users', authRoutes);
 
